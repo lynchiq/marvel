@@ -1,4 +1,4 @@
-import ComicsContainer from "../../containers/ComicsContainer/ComicsContainer";
+import ComicsContainer from "../../containers/ComicsContainer";
 
 export const Comics = () => {
   return (

@@ -1,5 +1,5 @@
-import {Character} from "../../components/Character/Character";
-import {characters as data} from "../../data";
+import {Character} from "../components/Character/Character";
+import {characters as data} from "../data";
 
 const CharactersContainer = () => {
 

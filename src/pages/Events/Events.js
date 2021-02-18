@@ -1,4 +1,4 @@
-import EventsContainer from "../../containers/EventsContainer/EventsContainer";
+import EventsContainer from "../../containers/EventsContainer";
 
 
 export const Events = () => {

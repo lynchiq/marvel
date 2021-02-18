@@ -1,7 +1,8 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
-  margin: 0 100px;
+  max-width: 1200px;
+  margin: 0 auto;
 `
 
 export const Row = styled.div`
@@ -35,4 +36,8 @@ export const HeroBg = styled.div`
 export const HeroTitle = styled.h1`
   text-transform: uppercase;
   font-size: 42px;
+`
+
+export const H2 = styled.h2`
+  text-transform: uppercase;
 `

@@ -630,7 +630,10 @@ export const characters = [
         "url": "http://marvel.com/comics/characters/1009144/aim.?utm_campaign=apiRef&utm_source=d9ca4d32a3973498dfaf3a5e7c1581cd"
       }
     ]
-  },
+  }
+]
+
+export const popularCharacters = [
   {
     "id": 1009368,
     "name": "Iron Man",

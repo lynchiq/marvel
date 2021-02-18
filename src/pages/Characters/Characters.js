@@ -1,5 +1,6 @@
-import CharactersContainer from "../../containers/CharactersContainer/CharactersContainer";
-import {Container, Hero, HeroBg, HeroContentWrapper, HeroTitle, Row} from "../styles";
+import CharactersContainer from "../../containers/CharactersContainer";
+import {Container, H2, Hero, HeroBg, HeroContentWrapper, HeroTitle, Row} from "../styles";
+import PopularCharactersContainer from "../../containers/PopularCharactersContainer";
 
 export const Characters = () => {
   return (
@@ -11,8 +12,11 @@ export const Characters = () => {
         </HeroContentWrapper>
       </Hero>
       <Container>
-        <h1>Marvel characters list</h1>
-        <p>This is page about marvel characters</p>
+        <H2>Popular heroes</H2>
+        <Row>
+          <PopularCharactersContainer/>
+        </Row>
+        <H2>MARVEL CHARACTERS LIST</H2>
         <Row>
           <CharactersContainer/>
         </Row>
