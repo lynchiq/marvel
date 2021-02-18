@@ -13,13 +13,14 @@ export const MenuContainer = styled.div`
   justify-content: center;
   
   :not(:first-child) {
+    padding-bottom: 2px;
     border-top: 1px solid #393939;
   }
 `
 
 export const Logo = styled.div`
   height: 100%;
-  padding: 0px 6px;
+  padding: 0 6px;
   text-transform: uppercase;
   box-sizing: border-box;
   font-size: 40px;
