@@ -1,6 +1,6 @@
 import {characters as data} from "../../data";
-import Card from "../../common/Card/Card";
-import CardList from "../../common/CardList/CardList";
+import Card from "../../common/components/Card/Card";
+import CardList from "../../common/components/CardList/CardList";
 
 const Characters = () => {
   let characters = data.map(character => {
