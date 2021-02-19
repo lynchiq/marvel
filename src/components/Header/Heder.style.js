@@ -23,7 +23,7 @@ export const Logo = styled.div`
   padding: 0 6px;
   text-transform: uppercase;
   box-sizing: border-box;
-  font-size: 40px;
+  font-size: 50px;
   background-color: #e62429;
   font-family: fantasy;
 `

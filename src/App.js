@@ -1,9 +1,9 @@
 import {BrowserRouter as Router} from 'react-router-dom'
 import {Routes} from "./pages/routes"
-import {Footer} from "./components/Footer/Footer"
 import {Header} from "./components/Header/Header"
 import {GlobalStyle} from "./styles/global"
 import styled from "styled-components"
+import Footer from "./components/Footer";
 
 const Page = styled.div`
   display: flex;

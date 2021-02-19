@@ -1,8 +1,13 @@
-export const Home = () => {
+import Container from "../../common/Container";
+import {H1, Paragraph} from "../../styles/typography";
+
+const Home = () => {
   return (
-    <div>
-      <h1>Home page</h1>
-      <p>You are welcome</p>
-    </div>
+    <Container>
+      <H1>Home page</H1>
+      <Paragraph>You are welcome</Paragraph>
+    </Container>
   )
 }
+
+export default Home

@@ -1,27 +1,35 @@
-import CharactersContainer from "../../containers/CharactersContainer";
-import {Container, H2, Hero, HeroBg, HeroContentWrapper, HeroTitle, Row} from "../styles";
-import PopularCharactersContainer from "../../containers/PopularCharactersContainer";
+import Container from "../../common/Container";
+import PageHero from "../../common/PageHero";
+import Section from "../../common/Section";
+import {CharactersContainer} from "../../containers";
+import Grid from "../../common/Grid";
+import {H1, H2} from "../../styles/typography";
+import poster from "../../assets/characters.jpg"
 
-export const Characters = () => {
+const Characters = () => {
   return (
     <>
-      <Hero>
-        <HeroBg/>
-        <HeroContentWrapper>
-          <HeroTitle>Marvel characters</HeroTitle>
-        </HeroContentWrapper>
-      </Hero>
+      <PageHero img={poster}>
+        <Container>
+          <H1>Characters page</H1>
+        </Container>
+      </PageHero>
       <Container>
-        <H2>Popular heroes</H2>
-        <Row>
-          <PopularCharactersContainer/>
-        </Row>
-        <H2>MARVEL CHARACTERS LIST</H2>
-        <Row>
-          <CharactersContainer/>
-        </Row>
+        <Section>
+          <H2>Avengers</H2>
+          <Grid>
+            <CharactersContainer/>
+          </Grid>
+        </Section>
+        <Section>
+          <H2>All characters</H2>
+          <Grid>
+            <CharactersContainer/>
+          </Grid>
+        </Section>
       </Container>
     </>
   )
 }
 
+export default Characters

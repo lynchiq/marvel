@@ -5,7 +5,7 @@ export const Header = () => {
   return (
     <HeaderWrapper>
       <MenuContainer>
-        <Link to={'/'}><Logo>marvel comics</Logo></Link>
+        <Link to={'/'}><Logo>super hero</Logo></Link>
       </MenuContainer>
       <MenuContainer>
         <Menu>
@@ -16,7 +16,10 @@ export const Header = () => {
             <Link to={'/comics'}>Comics</Link>
           </MenuItem>
           <MenuItem>
-            <Link to={'/events'}>Events</Link>
+            <Link to={'/favorites'}>Favorites</Link>
+          </MenuItem>
+          <MenuItem>
+            <Link to={'/search'}>Search</Link>
           </MenuItem>
         </Menu>
       </MenuContainer>

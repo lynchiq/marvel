@@ -1,16 +1,13 @@
 import {Switch, Route} from 'react-router-dom'
-import {Home} from "./Home/Home";
-import {Characters} from "./Characters/Characters";
-import {Comics} from "./Comics/Comics";
-import {Events} from "./Events/Events";
+import {Character, Characters, Comics, Home} from "./index";
 
 export const Routes = () => {
   return (
       <Switch>
         <Route path='/' exact component={Home} />
-        <Route path='/characters' component={Characters} />
+        <Route path='/characters' exact component={Characters} />
+        <Route path='/characters/:id' component={Character} />
         <Route path='/comics' component={Comics} />
-        <Route path='/events' component={Events} />
       </Switch>
   )
 }
