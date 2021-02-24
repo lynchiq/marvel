@@ -1,8 +1,22 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
-import charactersReducer from './characters/characters.slice'
+import charactersReducer from './modules/characters/slice'
+import createSagaMiddleware from 'redux-saga'
+import {rootSaga} from "./modules/rootSaga";
 
-export const store = configureStore({
-  reducer: combineReducers({
-    characters: charactersReducer
-  })
+const sagaMiddleware = createSagaMiddleware()
+
+const reducers = combineReducers({
+  characters: charactersReducer
 })
+
+const middlewares = [sagaMiddleware]
+
+const store = configureStore({
+  reducer: reducers,
+  middleware: middlewares
+})
+
+sagaMiddleware.run(rootSaga)
+
+
+export {store}
