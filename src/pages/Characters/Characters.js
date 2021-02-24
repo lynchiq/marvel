@@ -16,12 +16,6 @@ const Characters = () => {
       </PageHero>
       <Container>
         <Section>
-          <H2>Avengers</H2>
-          <Grid>
-            <CharactersContainer/>
-          </Grid>
-        </Section>
-        <Section>
           <H2>All characters</H2>
           <Grid>
             <CharactersContainer/>
