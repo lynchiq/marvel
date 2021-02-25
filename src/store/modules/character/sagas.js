@@ -4,7 +4,6 @@ import {getCharactersRequest, getCharactersSuccess} from "./slice";
 
 function* fetchCharacter(action) {
   try {
-
     yield put(getCharactersSuccess({data: {}}))
   } catch (e) {
   }

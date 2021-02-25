@@ -1,26 +1,22 @@
 import CharacterCard from "../../components/CharacterCard";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react"
-import {getCharactersRequest} from "../../store/modules/characters/slice";
+import {getCharactersRequest, setOffset} from "../../store/modules/characters/slice";
 import Pagination from "../../common/Pagination";
+import Grid from "../../common/Grid";
 
 const CharactersContainer = () => {
 
-  const {items, offset, limit, total, count, isLoading} = useSelector(state => {
+  const {items, total, count, offset, isLoading} = useSelector(state => {
     return state.characters
   })
 
   let dispatch = useDispatch()
 
   useEffect(() => {
-    if (!items.length) {
-      dispatch(getCharactersRequest({offset: 0}))
-    }
-  }, [])
-
-  const goToPage = (number) => {
-    dispatch(getCharactersRequest({offset: number}))
-  }
+    debugger
+    dispatch(getCharactersRequest(offset))
+  }, [offset])
 
   const characters = items.map(character => {
     return (
@@ -29,10 +25,16 @@ const CharactersContainer = () => {
     )
   })
 
-  return isLoading ? <div>Loading</div> : (
+  const changePage = (page) => {
+    dispatch(setOffset(page))
+  }
+
+  return (
     <>
-      {characters}
-      <Pagination offset={offset} limit={limit} total={total} count={count} goToPage={goToPage}/>
+      <Pagination total={total} count={count} offset={offset} onChange={changePage}/>
+      <Grid>
+        {isLoading ? <div>Loading</div> : characters}
+      </Grid>
     </>
   )
 }

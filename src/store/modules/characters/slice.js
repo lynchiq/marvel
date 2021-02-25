@@ -11,12 +11,14 @@ const slice = createSlice({
     isLoading: false
   },
   reducers: {
-    getCharactersRequest: (state, action) => {
+    setOffset: (state, action) => {
+      state.offset = action.payload.offset
+    },
+    getCharactersRequest: (state) => {
       state.isLoading = true
     },
     getCharactersSuccess: (state, action) => {
       state.items = action.payload.data.results
-      state.offset = action.payload.data.offset
       state.limit = action.payload.data.limit
       state.total = action.payload.data.total
       state.count = action.payload.data.count
@@ -26,6 +28,7 @@ const slice = createSlice({
 })
 
 export const {
+  setOffset,
   getCharactersRequest,
   getCharactersSuccess
 } = slice.actions
