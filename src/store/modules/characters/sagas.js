@@ -2,11 +2,11 @@ import {CharactersApi} from "../../../services/api";
 import {all, call, put, takeLatest} from "@redux-saga/core/effects";
 import {getCharactersRequest, getCharactersSuccess} from "./slice";
 
-function* fetchCharacters() {
+function* fetchCharacters(action) {
   try {
-    let {config, data, headers, request} = yield call(CharactersApi.getAll)
-
-    yield put(getCharactersSuccess({data: data}))
+    let api = () => CharactersApi.getAll(action.payload.offset)
+    let {data} = yield call(api)
+    yield put(getCharactersSuccess({data: data.data}))
   } catch (e) {
   }
 }
