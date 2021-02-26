@@ -1,4 +1,5 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
+import heroReducer from './modules/hero/slice'
 import charactersReducer from './modules/characters/slice'
 import createSagaMiddleware from 'redux-saga'
 import {rootSaga} from "./modules/rootSaga";
@@ -6,6 +7,7 @@ import {rootSaga} from "./modules/rootSaga";
 const sagaMiddleware = createSagaMiddleware()
 
 const reducers = combineReducers({
+  hero: heroReducer,
   characters: charactersReducer
 })
 

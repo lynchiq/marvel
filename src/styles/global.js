@@ -5,6 +5,11 @@ export const GlobalStyle = createGlobalStyle`
   
   ${normalize}
   
+  * {
+    color: #fff;
+    font-family: Bahnschrift, sans-serif;
+  }
+  
   a {
     text-decoration: none;
     color: inherit;

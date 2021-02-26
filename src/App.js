@@ -4,6 +4,7 @@ import {Header} from "./components/Header/Header"
 import {GlobalStyle} from "./styles/global"
 import styled from "styled-components"
 import Footer from "./components/Footer";
+import Main from "./components/Main/Main";
 
 const Page = styled.div`
   display: flex;
@@ -21,10 +22,9 @@ const App = () => {
       <GlobalStyle />
       <Page>
         <Header/>
-        <main>
+        <Main>
           <Routes/>
-        </main>
-        <Footer/>
+        </Main>
       </Page>
     </Router>
   );

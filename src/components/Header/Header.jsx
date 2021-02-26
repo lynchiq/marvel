@@ -5,15 +5,15 @@ export const Header = () => {
   return (
     <HeaderWrapper>
       <MenuContainer>
-        <Link to={'/'}><Logo>super hero</Logo></Link>
+        <Logo>super heroes</Logo>
       </MenuContainer>
       <MenuContainer>
         <Menu>
           <MenuItem>
-            <Link to={'/characters'}>Characters</Link>
+            <Link to={'/'}>Home</Link>
           </MenuItem>
           <MenuItem>
-            <Link to={'/comics'}>Comics</Link>
+            <Link to={'/characters'}>Characters</Link>
           </MenuItem>
           <MenuItem>
             <Link to={'/favorites'}>Favorites</Link>

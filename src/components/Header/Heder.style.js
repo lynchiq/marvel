@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const HeaderWrapper = styled.header`
   background-color: #202020;
   color: #fff;
-  font-size: 12px;
+  font-size: 16 px;
   text-transform: uppercase;
 `
 
@@ -11,19 +11,20 @@ export const MenuContainer = styled.div`
   min-height: 40px;
   display: flex;
   justify-content: center;
+  border-bottom: 1px solid #393939;
   
   :not(:first-child) {
     padding-bottom: 2px;
-    border-top: 1px solid #393939;
   }
 `
 
 export const Logo = styled.div`
+  user-select: none;
   height: 100%;
   padding: 0 6px;
   text-transform: uppercase;
   box-sizing: border-box;
-  font-size: 50px;
+  font-size: 48px;
   background-color: #e62429;
   font-family: fantasy;
 `
