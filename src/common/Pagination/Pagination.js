@@ -1,18 +1,25 @@
 import {useState} from 'react'
 import {PaginationContainer, PaginationControl, PaginationPerPage, StyledPagination} from "./Pagination.style";
 
-const Pagination = ({total, count, onChange}) => {
+const Pagination = ({total = 1, count = 1, onChange}) => {
 
   const pagesCount = Math.ceil(total/count)
+  const pages = new Array(pagesCount).fill(0).map((el, i) => i + 1)
 
-  return (
+  const setOffset = (pageNumber) => {
+    alert(pageNumber * count)
+  }
+
+  return   (
     <PaginationContainer>
       <PaginationPerPage>Per page : 12</PaginationPerPage>
       <StyledPagination>
         <PaginationControl>Prev</PaginationControl>
-        <PaginationControl onClick={() => onChange(20)}>{pagesCount}</PaginationControl>
-        <PaginationControl>2</PaginationControl>
-        <PaginationControl>3</PaginationControl>
+        {
+          pages.map(p => {
+            return <PaginationControl onClick={() => setOffset(p)}>{p}</PaginationControl>
+          })
+        }
         <PaginationControl>Next</PaginationControl>
       </StyledPagination>
     </PaginationContainer>

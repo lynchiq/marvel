@@ -5,5 +5,5 @@ export const StyledButton = styled.button`
 `
 
 export const StyledButtonText = styled.span`
-  
+  color: #000;
 `
