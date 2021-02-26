@@ -5,8 +5,6 @@ import {
   CharacterContentBox,
   CharacterFavorite
 } from "./CharacterCard.styles";
-import {Link} from "react-router-dom";
-import Character from "../Character";
 
 const CharacterCard = ({id, name, img, favorite}) => {
   return (

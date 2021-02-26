@@ -1,10 +1,5 @@
-import {useEffect} from "react"
 import {useDispatch, useSelector} from "react-redux";
 import {useRouteMatch} from "react-router-dom";
-import Container from "../../common/Container";
-import Section from "../../common/Section";
-import {getHeroRequest} from "../../store/modules/hero/slice";
-import Character from "../../components/Character";
 import {char as item} from "../../data"
 import Hero from "../../components/Hero";
 

@@ -1,17 +1,17 @@
-import {CharacterContainer} from "../../containers";
 import Container from "../../common/Container";
 import Section from "../../common/Section";
+import {CharactersContainer} from "../../containers";
 
-const Character = () => {
+const Characters = () => {
   return (
     <>
       <Container>
         <Section>
-          <CharacterContainer/>
+          <CharactersContainer/>
         </Section>
       </Container>
     </>
   )
 }
 
-export default Character
+export default Characters
