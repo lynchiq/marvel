@@ -4,10 +4,10 @@ const slice = createSlice({
   name: 'characters',
   initialState: {
     items: [],
-    offset: 0,
-    limit: 0,
-    total: 0,
-    count: 0,
+    offset: undefined,
+    limit: undefined,
+    total: undefined,
+    count: undefined,
     isLoading: false
   },
   reducers: {
