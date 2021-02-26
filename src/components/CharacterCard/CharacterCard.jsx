@@ -6,7 +6,7 @@ import {
   CharacterFavorite
 } from "./CharacterCard.styles";
 
-const CharacterCard = ({id, name, img, favorite}) => {
+const CharacterCard = ({id, name, img, toggleFavorite}) => {
   return (
     <CharacterCardWrapper>
       <CharacterFavorite/>
