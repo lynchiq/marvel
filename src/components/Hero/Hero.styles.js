@@ -36,5 +36,5 @@ export const HeroImgBg = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #350000c9;
+  background: linear-gradient(to right, #202020, #350000c9);
 `
