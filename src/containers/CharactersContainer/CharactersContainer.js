@@ -24,19 +24,21 @@ const CharactersContainer = () => {
 
   const characters = items.map(character => {
 
-    const isFavorite = favorites.includes(character.id)
+    const isFavorite = favorites.includes(character)
 
-    let toggleFavorite = (id) => {
+    let toggleFavorite = (character) => {
       if (isFavorite) {
-        dispatch(unfavorite(id))
+        console.log('fuv')
+        dispatch(unfavorite(character))
       } else {
-        dispatch(favorite(id))
+        console.log('unfuv')
+        dispatch(favorite(character))
       }
     }
 
     return (
       <CharacterCard key={character.id} id={character.id} name={character.name}
-                     img={character.thumbnail.path + '.' + character.thumbnail.extension} favorite={isFavorite} toggleFavorite={() => toggleFavorite(character.id)}/>
+                     img={character.thumbnail.path + '.' + character.thumbnail.extension} favorite={isFavorite} toggleFavorite={() => toggleFavorite(character)}/>
     )
   })
 

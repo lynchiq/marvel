@@ -17,7 +17,7 @@ const Pagination = ({total = 1, count = 1, onChange}) => {
         <PaginationControl>Prev</PaginationControl>
         {
           pages.map(p => {
-            return <PaginationControl onClick={() => setOffset(p)}>{p}</PaginationControl>
+            return <PaginationControl key={p} onClick={() => setOffset(p)}>{p}</PaginationControl>
           })
         }
         <PaginationControl>Next</PaginationControl>
