@@ -3,21 +3,22 @@ import {createSlice} from "@reduxjs/toolkit";
 const slice = createSlice({
   name: 'favorites',
   initialState: {
-    items: [],
+    items: [1009368],
   },
   reducers: {
     favorite: (state, action) => {
       state.isLoading = true
       state.items = [
         ...state.items,
-        ...action.payload
+        action.payload
       ]
     },
     unfavorite: (state, action) => {
-      state.item = action.payload.data
-      state.isLoading = false
+      state.items = state.items.filter(item => item !== action.payload)
     },
   }
 })
+
+export const {favorite, unfavorite} = slice.actions
 
 export default slice.reducer

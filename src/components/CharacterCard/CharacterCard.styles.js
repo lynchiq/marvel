@@ -23,7 +23,7 @@ export const CharacterFavorite = styled.div`
 
   ::after {
     content: '♥';
-    color: ${props => props.favorite ? '#fff' : '#e62429'};
+    color: ${props => props.favorite ? '#e62429' : '#fff'};
     font-size: 30px;
   }
 

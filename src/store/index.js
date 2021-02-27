@@ -12,7 +12,7 @@ const reducers = combineReducers({
   hero: heroReducer,
   characters: charactersReducer,
   search: searchReducer,
-  favorite: favoritesReducer
+  favorites: favoritesReducer
 })
 
 const middlewares = [sagaMiddleware]
