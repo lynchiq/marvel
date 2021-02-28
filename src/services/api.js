@@ -1,10 +1,12 @@
 import axios from "axios"
 
+console.log(process.env)
+
 export default axios.create({
   baseURL: 'https://gateway.marvel.com/v1/public',
   params: {
-    apikey: 'd9ca4d32a3973498dfaf3a5e7c1581cd',
-    hash: '5b7ebc5e6b5b1f2450dc6f17cdb9bc4c',
-    ts: '1'
+    apikey: process.env.REACT_APP_API_KEY,
+    hash: process.env.REACT_APP_HASH,
+    ts: process.env.REACT_APP_TS
   }
 })
