@@ -1,10 +1,15 @@
 import {HeroContent, HeroDescription, HeroImgBg, HeroImgContainer, HeroName, StyledHero} from "./Hero.styles";
 import Container from "../../common/Container";
+import ComicCard from "../ComicCard";
+import Row from "../../common/Row";
 
 const Hero = ({name, description, comics = [], thumbnail}) => {
 
-  const comicsList = comics.map(comic => {
-    return <div key={comic.id}>{comic.title}</div>
+  const comicsList = comics.map((comic, i) => {
+    if (i < 5) {
+      return <ComicCard key={comic.id} title={comic.title} thumbnail={comic.thumbnail}/>
+    }
+    return null
   })
 
   return (
@@ -17,13 +22,13 @@ const Hero = ({name, description, comics = [], thumbnail}) => {
         <HeroContent>
           <HeroName>{name}</HeroName>
           <HeroDescription>{description}</HeroDescription>
+          <Row>
+            {comicsList}
+          </Row>
         </HeroContent>
-        <div>
-          {comicsList}
-        </div>
       </Container>
-    </StyledHero>
-  )
+</StyledHero>
+)
 }
 
 export default Hero

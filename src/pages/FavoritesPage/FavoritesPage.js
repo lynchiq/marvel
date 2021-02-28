@@ -18,10 +18,8 @@ const FavoritesPage = () => {
 
     let toggleFavorite = (character) => {
       if (isFavorite) {
-        console.log('fuv')
         dispatch(unfavorite(character))
       } else {
-        console.log('unfuv')
         dispatch(favorite(character))
       }
     }
