@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {Link} from "react-router-dom";
 
 export const ComicCardBg = styled.div`
   position: absolute;
@@ -12,7 +13,8 @@ export const ComicCardBg = styled.div`
   transition: background 2s;
 `
 
-export const StyledComicCard = styled.div`
+export const StyledComicCard = styled(Link)`
+  display: block;
   position: relative;
   cursor: pointer;
   margin: 10px;

@@ -17,7 +17,7 @@ const Hero = ({name, description, comics = [], thumbnail}) => {
 
   const comicsList = comics.map((comic, i) => {
     if (i < 12) {
-      return <ComicCard key={comic.id} title={comic.title} thumbnail={comic.thumbnail}/>
+      return <ComicCard key={comic.id} id={comic.id} title={comic.title} thumbnail={comic.thumbnail}/>
     }
     return null
   })

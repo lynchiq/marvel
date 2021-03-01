@@ -1,6 +1,6 @@
 import api from "../../../services/api";
 import {all, call, put, takeLatest} from "@redux-saga/core/effects";
-import {getHeroComicsRequest, getHeroComicsSuccess} from "./slice";
+import {getComicRequest, getComicSuccess, getHeroComicsRequest, getHeroComicsSuccess} from "./slice";
 
 
 function* fetchHeroComics(action) {
@@ -12,4 +12,15 @@ function* fetchHeroComics(action) {
   }
 }
 
-export default all([takeLatest(getHeroComicsRequest, fetchHeroComics)]);
+function* fetchComic(action) {
+  try {
+    let {data} =  yield call(api.get, `/comics/${action.payload.id}`)
+    yield put(getComicSuccess({data: data.data.results[0]}))
+  } catch (e) {
+
+  }
+}
+
+
+
+export default all([takeLatest(getHeroComicsRequest, fetchHeroComics), takeLatest(getComicRequest, fetchComic)]);
