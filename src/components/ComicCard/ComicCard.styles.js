@@ -1,16 +1,28 @@
 import styled from "styled-components";
 
-export const ComicList = styled.div`
-  display: flex;
+export const ComicCardBg = styled.div`
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  width: 100%;
+  height: 100%;
+  background: #040303cf;
+  transition: background 2s;
 `
 
 export const StyledComicCard = styled.div`
-  :not(:first-child){
-    margin-left: 50px;
+  position: relative;
+  cursor: pointer;
+  margin: 10px;
+  
+  :hover ${ComicCardBg} {
+    display: flex;
   }
 `
 
-export const ComicCardBg = styled.div``
+
 
 export const ComicCardImg = styled.img`
   width: 100%;

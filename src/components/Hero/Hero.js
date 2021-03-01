@@ -1,12 +1,22 @@
-import {HeroContent, HeroDescription, HeroImgBg, HeroImgContainer, HeroName, StyledHero} from "./Hero.styles";
+import {
+  HeroComicsContainer,
+  HeroContent,
+  HeroDescription,
+  HeroImgBg,
+  HeroImgContainer,
+  HeroName,
+  StyledHero
+} from "./Hero.styles";
 import Container from "../../common/Container";
 import ComicCard from "../ComicCard";
-import Row from "../../common/Row";
+import Button from "../../common/Button";
+import Section from "../../common/Section";
+import Carousel from "../../common/Carousel";
 
 const Hero = ({name, description, comics = [], thumbnail}) => {
 
   const comicsList = comics.map((comic, i) => {
-    if (i < 5) {
+    if (i < 12) {
       return <ComicCard key={comic.id} title={comic.title} thumbnail={comic.thumbnail}/>
     }
     return null
@@ -19,13 +29,16 @@ const Hero = ({name, description, comics = [], thumbnail}) => {
         <img src={thumbnail ? thumbnail.path + '.' + thumbnail.extension : ''} alt={name}/>
       </HeroImgContainer>
       <Container>
-        <HeroContent>
-          <HeroName>{name}</HeroName>
-          <HeroDescription>{description}</HeroDescription>
-          <Row>
-            {comicsList}
-          </Row>
-        </HeroContent>
+        <Section>
+          <HeroContent>
+            <Button>Back</Button>
+            <HeroName>{name}</HeroName>
+            <HeroDescription>{description}</HeroDescription>
+            <Carousel>
+              {comicsList}
+            </Carousel>
+          </HeroContent>
+        </Section>
       </Container>
 </StyledHero>
 )

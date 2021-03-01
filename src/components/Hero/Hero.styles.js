@@ -21,6 +21,11 @@ export const HeroDescription = styled.p`
   font-size: 30px;
 `
 
+export const HeroComicsContainer = styled.div`
+  width: 70%;
+  margin: 0 auto;
+`
+
 export const HeroImgContainer = styled.div`
   position: absolute;
   height: 100%;
