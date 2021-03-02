@@ -22,8 +22,14 @@ export const HeroDescription = styled.p`
 `
 
 export const HeroComicsContainer = styled.div`
-  width: 70%;
-  margin: 0 auto;
+  cursor: pointer;
+  width: 50%;
+  text-align: center;
+  text-transform: uppercase;
+`
+
+export const HeroComicsList = styled.div`
+  display: flex;
 `
 
 export const HeroImgContainer = styled.div`

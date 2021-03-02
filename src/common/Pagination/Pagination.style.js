@@ -17,6 +17,7 @@ export const PaginationControl = styled.div`
   padding: 5px;
   border-radius: 3px;
   border: 1px solid #000;
+  background: ${props => props.current ? 'yellow' : 'green'};
 
   :not(:first-child) {
     margin-left: 5px;

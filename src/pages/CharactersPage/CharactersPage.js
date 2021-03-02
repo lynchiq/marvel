@@ -2,38 +2,28 @@ import {useEffect} from "react"
 import {useDispatch, useSelector} from "react-redux"
 import {charactersPageSelector} from "../../store/modules/characters/selectors"
 import {getCharactersRequest} from "../../store/modules/characters/slice"
-import CharacterCard from "../../components/CharacterCard"
-import {Container, Grid} from "@material-ui/core"
+import {Container} from "@material-ui/core"
+import {H1} from "../../styles/typography";
+import {Section} from "../../styles/global";
+import CharactersList from "../../components/CharactersList";
 
 const CharactersPage = () => {
 
   let dispatch = useDispatch()
 
-  const {items, offset, favorites} = useSelector(charactersPageSelector)
+  const {items, offset, isLoading} = useSelector(charactersPageSelector)
 
   useEffect(() => {
     dispatch(getCharactersRequest(offset))
   }, [offset])
 
-  const characters = items.map(character => {
-    return (
-      <CharacterCard
-        {...character}
-        key={character.id}
-        favorite={favorites.includes(character)}
-        toggleFavorite={() => {}}
-      />
-    )
-  })
-
   return (
-    <>
+    <Section>
       <Container>
-        <Grid>
-          {characters}
-        </Grid>
+        <H1>Characters</H1>
+        {isLoading ? 'Loading' : <CharactersList characters={items}/>}
       </Container>
-    </>
+    </Section>
   )
 }
 

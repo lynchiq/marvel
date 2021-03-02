@@ -7,10 +7,7 @@ import {
   ComicTitle,
   StyledComic
 } from "./Comic.styles";
-import Carousel from "../../common/Carousel";
-import CharacterCard from "../CharacterCard";
 import {H3} from "../../styles/typography";
-import Row from "../../common/Row";
 
 const Comic = ({title, description, thumbnail, prices, format, pageCount, creators, characters}) => {
   return (
@@ -23,12 +20,11 @@ const Comic = ({title, description, thumbnail, prices, format, pageCount, creato
         <ComicDescription>{description ? description : 'Description is empty'}</ComicDescription>
         <ComicInfo>Page count: {pageCount}</ComicInfo>
         <ComicInfo>Format: {format}</ComicInfo>
-        <ComicInfo>Price: {prices ? prices[0].price : '--'}</ComicInfo>
-        <ComicInfo>Price: {prices ? prices[0].price : '--'}</ComicInfo>
-        <Row>
+        <ComicInfo>Price: {prices ? [prices[0].price,prices[0].type].join(' ') : '--'}</ComicInfo>
+
           <ComicInfoList>
             <H3>Creators:</H3>
-            {creators && creators.items.map(item => <ComicInfo>{item.name}</ComicInfo>)}
+            {creators && creators.items.map(item => <ComicInfo>{item.role}: {item.name}</ComicInfo>)}
           </ComicInfoList>
           <ComicInfoList>
             <H3>Characters:</H3>
@@ -38,7 +34,7 @@ const Comic = ({title, description, thumbnail, prices, format, pageCount, creato
               )
             })}
           </ComicInfoList>
-        </Row>
+
       </ComicContent>
     </StyledComic>
   )

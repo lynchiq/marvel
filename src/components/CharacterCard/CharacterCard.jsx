@@ -3,14 +3,29 @@ import {
   CharacterCardName,
   CharacterCardWrapper,
   CharacterContentBox,
-  CharacterFavorite
+  CharacterFavorite,
+  CharacterUnfavorite
 } from "./CharacterCard.styles";
+import {useDispatch} from "react-redux";
+import {addToFavorites, removeFromFavorites} from "../../store/modules/characters/slice";
 
-const CharacterCard = ({id, name, img, favorite, toggleFavorite}) => {
+const CharacterCard = ({id, name, thumbnail, favorite}) => {
+  let dispatch = useDispatch()
+
+  let fav = () => {
+    dispatch(addToFavorites(id))
+  }
+
+  let unfav = () => {
+    dispatch(removeFromFavorites(id))
+  }
+
   return (
     <CharacterCardWrapper>
-      <CharacterFavorite favorite={favorite} onClick={toggleFavorite}/>
-      <CharacterCardImg src={img} alt={name}/>
+      {
+        favorite ? <CharacterFavorite onClick={unfav}/> : <CharacterUnfavorite onClick={fav}/>
+      }
+      <CharacterCardImg src={[thumbnail.path, thumbnail.extension].join('.')} alt={name}/>
       <CharacterContentBox to={`/characters/${id}`}>
         <CharacterCardName>{name}</CharacterCardName>
       </CharacterContentBox>

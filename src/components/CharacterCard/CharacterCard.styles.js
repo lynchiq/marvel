@@ -8,7 +8,7 @@ export const CharacterCardWrapper = styled.div`
   align-items: center;
 `
 
-export const CharacterFavorite = styled.div`
+const FavoriteBtn = styled.div`
   cursor: pointer;
   position: absolute;
   top: 0;
@@ -23,12 +23,23 @@ export const CharacterFavorite = styled.div`
 
   ::after {
     content: '♥';
-    color: ${props => props.favorite ? '#e62429' : '#fff'};
     font-size: 30px;
   }
 
   :hover {
     background: #545454;
+  }
+`
+
+export const CharacterUnfavorite = styled(FavoriteBtn)`
+  ::after {
+    color: #fff;
+  }
+`
+
+export const CharacterFavorite = styled(FavoriteBtn)`
+  ::after {
+    color: #e62429;
   }
 `
 

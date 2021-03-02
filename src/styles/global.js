@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 import normalize from './normalize.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -16,4 +16,9 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none!important;
     color: inherit!important;
   }
+`
+
+export const Section = styled.section`
+  padding: 15px 0;
+  overflow: hidden;
 `
