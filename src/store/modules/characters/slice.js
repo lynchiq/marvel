@@ -23,10 +23,9 @@ const slice = createSlice({
       state.isLoading = true
     },
     getCharactersSuccess: (state, action) => {
-      let as = [...state.favorites]
-
+      let favs = [...state.favorites]
       const byId = action.payload.data.results.reduce((byId, character) => {
-        character.favorite = as.includes(character.id)
+        character.favorite = favs.includes(character.id)
         byId[character.id] = character
         return byId
       }, [])
@@ -42,6 +41,9 @@ const slice = createSlice({
     addToFavorites: (state, action) => {
       state.favorites.push(action.payload)
       state.items[action.payload].favorite = true
+    },
+    searchFavoritesRequest: () => {
+
     },
     removeFromFavorites: (state, action) => {
       state.favorites = state.favorites.filter(item => item.id !== action.payload)

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const StyledMain = styled.main`
+  position: relative;
   background-color: #202020;
 `
 

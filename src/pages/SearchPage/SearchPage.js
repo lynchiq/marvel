@@ -6,6 +6,8 @@ import {useDispatch, useSelector} from "react-redux";
 import {searchHeroByNameRequest} from "../../store/modules/search/slice";
 import CharacterCard from "../../components/CharacterCard";
 import {Container, Grid} from "@material-ui/core";
+import CharactersList from "../../components/CharactersList";
+import {Section} from "../../styles/global";
 
 const SearchPage = () => {
 
@@ -13,11 +15,6 @@ const SearchPage = () => {
   const [searchedName, setSearchedName] = useState('');
 
   const {items, isLoading} = useSelector(state => state.search)
-
-  const heroes = items.map(hero => {
-    return <CharacterCard key={hero.id} id={hero.id} name={hero.name}
-                          img={hero.thumbnail.path + '.' + hero.thumbnail.extension} favorite={true}/>
-  })
 
   const handleChange = (name) => {
     setSearchedName(name)
@@ -35,9 +32,11 @@ const SearchPage = () => {
         <Button onClick={handleClick}>Search</Button>
 
 
-        <Grid>
-          {heroes.length ? heroes : <div>Nothing found</div>}
-        </Grid>
+        <Section>
+          <Grid>
+            <CharactersList characters={items}/>
+          </Grid>
+        </Section>
 
     </Container>
   )
