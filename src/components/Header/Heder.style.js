@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const HeaderWrapper = styled.header`
   background-color: #202020;
   color: #fff;
-  font-size: 16 px;
+  font-size: 16px;
   text-transform: uppercase;
 `
 
@@ -13,9 +13,6 @@ export const MenuContainer = styled.div`
   justify-content: center;
   border-bottom: 1px solid #393939;
   
-  :not(:first-child) {
-    padding-bottom: 2px;
-  }
 `
 
 export const Logo = styled.div`

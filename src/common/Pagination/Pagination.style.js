@@ -5,7 +5,7 @@ export const PaginationContainer = styled.div`
   justify-content: space-between;
 `
 
-export const PaginationPerPage= styled.div``
+export const PaginationPerPage = styled.div``
 
 export const StyledPagination = styled.div`
   display: flex;
@@ -17,12 +17,12 @@ export const PaginationControl = styled.div`
   padding: 5px;
   border-radius: 3px;
   border: 1px solid #000;
-  
-  :not(:first-child){
+
+  :not(:first-child) {
     margin-left: 5px;
   }
-  
-  :hover{
+
+  :hover {
     border: 1px solid #e62429;
     background: #e62429;
     color: #fff;

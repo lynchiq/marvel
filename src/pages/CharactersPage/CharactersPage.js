@@ -1,11 +1,9 @@
 import {useEffect} from "react"
-import Container from "../../common/Container";
-import Section from "../../common/Section";
-import {useDispatch, useSelector} from "react-redux";
-import {charactersPageSelector} from "../../store/modules/characters/selectors";
-import {getCharactersRequest} from "../../store/modules/characters/slice";
-import CharacterCard from "../../components/CharacterCard";
-import Grid from "../../common/Grid";
+import {useDispatch, useSelector} from "react-redux"
+import {charactersPageSelector} from "../../store/modules/characters/selectors"
+import {getCharactersRequest} from "../../store/modules/characters/slice"
+import CharacterCard from "../../components/CharacterCard"
+import {Container, Grid} from "@material-ui/core"
 
 const CharactersPage = () => {
 
@@ -31,11 +29,9 @@ const CharactersPage = () => {
   return (
     <>
       <Container>
-        <Section>
-          <Grid>
-            {characters}
-          </Grid>
-        </Section>
+        <Grid>
+          {characters}
+        </Grid>
       </Container>
     </>
   )

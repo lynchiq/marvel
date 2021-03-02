@@ -40,7 +40,10 @@ export const CharacterCardImg = styled.img`
 `
 
 export const CharacterContentBox = styled(Link)`
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70px;
   cursor: pointer;
   width: 100%;
   background: #000;
@@ -53,4 +56,5 @@ export const CharacterContentBox = styled(Link)`
 
 export const CharacterCardName = styled.h3`
   color: #fff;
+  font-size: 20px;
 `

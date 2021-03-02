@@ -22,11 +22,11 @@ export const PageHeroContentWrapper = styled.div`
   justify-content: center;
   align-items: center;
   background: #000000a6;
-  
+
   ${H1} {
     font-size: 44px;
     text-transform: uppercase;
     color: #fff;
-    font-family: Calibri,serif;
+    font-family: Calibri, serif;
   }
 `

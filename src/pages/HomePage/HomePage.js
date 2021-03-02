@@ -1,5 +1,5 @@
-import Container from "../../common/Container";
 import {H1, Paragraph} from "../../styles/typography";
+import {Container} from "@material-ui/core";
 
 const HomePage = () => {
   return (

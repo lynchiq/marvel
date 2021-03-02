@@ -1,10 +1,8 @@
 import {useDispatch, useSelector} from "react-redux";
 import CharacterCard from "../../components/CharacterCard";
-import Grid from "../../common/Grid";
-import Container from "../../common/Container";
-import Section from "../../common/Section";
 import {favorite, unfavorite} from "../../store/modules/characters/slice";
 import {favoriteCharactersSelector} from "../../store/modules/characters/selectors";
+import {Container} from "@material-ui/core";
 
 const FavoritesPage = () => {
 
@@ -32,11 +30,7 @@ const FavoritesPage = () => {
 
   return (
     <Container>
-      <Section>
-        <Grid>
-          {characters}
-        </Grid>
-      </Section>
+      {characters}
     </Container>
   )
 }

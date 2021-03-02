@@ -1,5 +1,5 @@
 import {Switch, Route} from 'react-router-dom'
-import {HeroPage, CharactersPage, HomePage, SearchPage, FavoritesPage, ComicPage} from "./index";
+import {HeroPage, CharactersPage, HomePage, SearchPage, FavoritesPage, ComicPage} from "../pages";
 
 export const Routes = () => {
   return (

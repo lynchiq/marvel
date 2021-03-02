@@ -1,13 +1,11 @@
 import {useState} from "react"
-import Container from "../../common/Container";
 import {H1} from "../../styles/typography";
 import Input from "../../common/Input";
 import Button from "../../common/Button";
 import {useDispatch, useSelector} from "react-redux";
 import {searchHeroByNameRequest} from "../../store/modules/search/slice";
-import Section from "../../common/Section";
 import CharacterCard from "../../components/CharacterCard";
-import Grid from "../../common/Grid";
+import {Container, Grid} from "@material-ui/core";
 
 const SearchPage = () => {
 
@@ -32,16 +30,15 @@ const SearchPage = () => {
 
   return (
     <Container>
-      <Section>
         <H1>Search your favorite superhero</H1>
         <Input placeholder={'Type superhero name here'} value={searchedName} onChange={handleChange}/>
         <Button onClick={handleClick}>Search</Button>
-      </Section>
-      <Section>
+
+
         <Grid>
           {heroes.length ? heroes : <div>Nothing found</div>}
         </Grid>
-      </Section>
+
     </Container>
   )
 }

@@ -1,10 +1,9 @@
-import Container from "../../common/Container";
-import Section from "../../common/Section";
 import {useDispatch, useSelector} from "react-redux";
 import {useRouteMatch} from "react-router-dom";
 import {getComicRequest} from "../../store/modules/comics/slice";
 import {useEffect} from "react";
 import Comic from "../../components/Comic";
+import {Container} from "@material-ui/core";
 
 const ComicPage = () => {
   let dispatch = useDispatch()
@@ -17,9 +16,7 @@ const ComicPage = () => {
 
   return (
     <Container>
-      <Section>
         <Comic {...item}/>
-      </Section>
     </Container>
   )
 }
