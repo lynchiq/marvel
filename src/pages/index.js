@@ -1,4 +1,4 @@
-export {default as Home} from './Home/Home'
+export {default as HomePage} from './HomePage/HomePage'
 export {default as CharactersPage} from './CharactersPage/CharactersPage'
 export {default as HeroPage} from './HeroPage/HeroPage'
 export {default as SearchPage} from './SearchPage/SearchPage'

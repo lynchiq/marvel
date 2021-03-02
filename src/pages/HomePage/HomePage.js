@@ -1,7 +1,7 @@
 import Container from "../../common/Container";
 import {H1, Paragraph} from "../../styles/typography";
 
-const Home = () => {
+const HomePage = () => {
   return (
     <Container>
       <H1>Home page</H1>
@@ -10,4 +10,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default HomePage
