@@ -4,10 +4,13 @@ const slice = createSlice({
   name: 'characters',
   initialState: {
     items: [],
-    offset: undefined,
-    limit: undefined,
-    total: undefined,
-    count: undefined,
+    favorites: [],
+    pagination: {
+      offset: undefined,
+      limit: undefined,
+      total: undefined,
+      count: undefined
+    },
     isLoading: false
   },
   reducers: {
@@ -19,18 +22,26 @@ const slice = createSlice({
     },
     getCharactersSuccess: (state, action) => {
       state.items = action.payload.data.results
-      state.limit = action.payload.data.limit
-      state.total = action.payload.data.total
-      state.count = action.payload.data.count
+      state.pagination.limit = action.payload.data.limit
+      state.pagination.total = action.payload.data.total
+      state.pagination.count = action.payload.data.count
       state.isLoading = false
-    }
+    },
+    favorite: (state, action) => {
+      state.items.push(action.payload)
+    },
+    unfavorite: (state, action) => {
+      state.items = state.items.filter(item => item.id !== action.payload.id)
+    },
   }
 })
 
 export const {
   setOffset,
   getCharactersRequest,
-  getCharactersSuccess
+  getCharactersSuccess,
+  favorite,
+  unfavorite
 } = slice.actions
 
 export default slice.reducer

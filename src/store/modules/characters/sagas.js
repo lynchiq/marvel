@@ -5,7 +5,9 @@ import {getCharactersRequest, getCharactersSuccess} from "./slice";
 function* fetchCharacters(action) {
   try {
     let {data} =  yield call(api.get, `/characters`, {
-      offset: action.payload
+      params: {
+        offset: action.payload
+      }
     })
     yield put(getCharactersSuccess({data: data.data}))
   } catch (e) {

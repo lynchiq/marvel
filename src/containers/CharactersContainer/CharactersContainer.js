@@ -1,26 +1,27 @@
 import CharacterCard from "../../components/CharacterCard";
 import {useDispatch, useSelector} from "react-redux";
-import {useEffect} from "react"
-import {getCharactersRequest, setOffset} from "../../store/modules/characters/slice";
+import {useEffect, useState} from "react"
+import {favorite, getCharactersRequest, setOffset, unfavorite} from "../../store/modules/characters/slice";
 import Pagination from "../../common/Pagination";
 import Grid from "../../common/Grid";
-import {characters as items} from "../../data";
 import Section from "../../common/Section";
-import {favorite, unfavorite} from "../../store/modules/favorites/slice";
+import {charactersPageSelector} from "../../store/modules/characters/selectors";
 
 const CharactersContainer = () => {
 
-  const {total, count, offset, isLoading} = useSelector(state => {
-    return state.characters
-  })
+  let dispatch = useDispatch()
+
+  const {items, total, count, offset, isLoading} = useSelector(charactersPageSelector)
+
+  const [currentPage, setCurrentPage] = useState(1)
 
   const favorites = useSelector(state => state.favorites.items)
 
-  let dispatch = useDispatch()
 
-  // useEffect(() => {
-  //   dispatch(getCharactersRequest(offset))
-  // }, [offset])
+
+  useEffect(() => {
+    dispatch(getCharactersRequest(offset))
+  }, [offset])
 
   const characters = items.map(character => {
 
@@ -30,7 +31,6 @@ const CharactersContainer = () => {
       if (isFavorite) {
         dispatch(unfavorite(character))
       } else {
-        console.log('unfuv')
         dispatch(favorite(character))
       }
     }
@@ -41,8 +41,8 @@ const CharactersContainer = () => {
     )
   })
 
-  const changePage = (page) => {
-    dispatch(setOffset(page))
+  const changePage = (offset) => {
+    dispatch(getCharactersRequest(offset))
   }
 
   return (
