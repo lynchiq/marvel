@@ -5,6 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {charactersPageSelector} from "../../store/modules/characters/selectors";
 import {getCharactersRequest} from "../../store/modules/characters/slice";
 import CharacterCard from "../../components/CharacterCard";
+import Grid from "../../common/Grid";
 
 const CharactersPage = () => {
 
@@ -18,7 +19,12 @@ const CharactersPage = () => {
 
   const characters = items.map(character => {
     return (
-      <CharacterCard key={character.id} {...character} favorite={favorites.includes(character)} toggleFavorite={() => {}}/>
+      <CharacterCard
+        {...character}
+        key={character.id}
+        favorite={favorites.includes(character)}
+        toggleFavorite={() => {}}
+      />
     )
   })
 
@@ -26,7 +32,9 @@ const CharactersPage = () => {
     <>
       <Container>
         <Section>
-          {characters}
+          <Grid>
+            {characters}
+          </Grid>
         </Section>
       </Container>
     </>
