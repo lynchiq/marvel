@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const StyledMain = styled.main`
   position: relative;
-  background-color: #202020;
+  background-color: #2d2f2d;
 `
 
 const Main = ({children}) => {

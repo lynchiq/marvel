@@ -47,5 +47,5 @@ export const HeroThumbBg = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, #202020, #350000b8);
+  background: linear-gradient(to right, #2d2f2d, #350000b8);
 `
