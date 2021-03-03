@@ -3,6 +3,7 @@ import heroReducer from './modules/hero/slice'
 import charactersReducer from './modules/characters/slice'
 import searchReducer from './modules/search/slice'
 import comicsReducer from './modules/comics/slice'
+import favoritesReducer from './modules/favorites/slice'
 import createSagaMiddleware from 'redux-saga'
 import {rootSaga} from "./modules/rootSaga";
 
@@ -12,7 +13,8 @@ const reducers = combineReducers({
   hero: heroReducer,
   characters: charactersReducer,
   comics: comicsReducer,
-  search: searchReducer
+  search: searchReducer,
+  favorites: favoritesReducer
 })
 
 const middlewares = [sagaMiddleware]

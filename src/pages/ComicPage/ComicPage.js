@@ -4,6 +4,7 @@ import {getComicRequest} from "../../store/modules/comics/slice";
 import {useEffect} from "react";
 import Comic from "../../components/Comic";
 import {Container} from "@material-ui/core";
+import {Section} from "../../styles/global";
 
 const ComicPage = () => {
   let dispatch = useDispatch()
@@ -16,7 +17,9 @@ const ComicPage = () => {
 
   return (
     <Container>
-        <Comic {...item}/>
+        <Section>
+          <Comic {...item}/>
+        </Section>
     </Container>
   )
 }

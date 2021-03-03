@@ -147,12 +147,12 @@ export const avengers = [
     },
   },
   {
-    "id": 1010734,
-    "name": "Peter Quill",
+    "id": 1009407,
+    "name": "Loki",
     "description": "",
-    "modified": "1969-12-31T19:00:00-0500",
+    "modified": "2017-08-21T16:45:34-0400",
     "thumbnail": {
-      "path": "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available",
+      "path": "http://i.annihil.us/u/prod/marvel/i/mg/d/90/526547f509313",
       "extension": "jpg"
     },
   }

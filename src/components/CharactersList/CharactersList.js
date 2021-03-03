@@ -1,14 +1,17 @@
 import {Grid} from "@material-ui/core";
-import CharacterCard from "../CharacterCard";
+import HeroCard from "../HeroCard";
 
 const CharactersList = ({characters}) => {
 
-  const charactersList = characters.map(character => {
+
+  const charactersList = characters.map((hero, i) => {
     return (
-      <Grid item xs={3}>
-        <CharacterCard
-          {...character}
-          key={character.id}
+      <Grid item lg={3} md={4} sm={6} key={hero.id}>
+        <HeroCard
+          id={hero.id}
+          name={hero.name}
+          thumbnail={hero.thumbnail}
+          favorite={true}
         />
       </Grid>
     )
@@ -16,7 +19,7 @@ const CharactersList = ({characters}) => {
 
   return (
     <>
-      <Grid container spacing={7}>
+      <Grid container spacing={2}>
         {charactersList}
       </Grid>
     </>

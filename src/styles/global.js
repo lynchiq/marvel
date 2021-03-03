@@ -10,11 +10,20 @@ export const GlobalStyle = createGlobalStyle`
   * {
     color: #fff;
     font-family: Bahnschrift, sans-serif;
+    text-transform: uppercase;
   }
   
   a {
     text-decoration: none!important;
     color: inherit!important;
+  }
+
+  .MuiPaginationItem-root {
+    color: #fff!important;
+  }
+
+  .MuiPaginationItem-textSecondary.Mui-selected{
+    background-color: #e62429!important;
   }
 `
 

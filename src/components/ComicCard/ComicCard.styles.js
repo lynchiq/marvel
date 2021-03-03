@@ -28,4 +28,6 @@ export const StyledComicCard = styled(Link)`
 
 export const ComicCardImg = styled.img`
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 `

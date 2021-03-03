@@ -1,46 +1,60 @@
 import {
-  HeroComicsContainer,
-  HeroComicsList,
+  HeroComics,
   HeroContent,
   HeroDescription,
-  HeroImgBg,
-  HeroImgContainer,
   HeroName,
+  HeroThumbBg,
+  HeroThumbContainer,
   StyledHero
 } from "./Hero.styles";
-
+import {Container, Grid} from "@material-ui/core";
+import createThumbnailSrc from "../../utils/createThumbnailSrc";
 import ComicCard from "../ComicCard";
-import {Container, Link} from "@material-ui/core";
+import {Link} from "react-router-dom";
+import PropTypes, {array} from "prop-types"
 
-const Hero = ({name, description, comics = [], thumbnail}) => {
+const Hero = ({name, description, thumbnail, comics = []}) => {
 
-  const comicsList = comics.map((comic, i) => {
-    if (i < 5) {
-      return <ComicCard key={comic.id} id={comic.id} title={comic.title} thumbnail={comic.thumbnail}/>
+  const thumbSrc = createThumbnailSrc(thumbnail)
+
+  const comicsList = comics.map((item, i) => {
+
+    if (i > 3) {
+      return
     }
-    return null
+
+    return (
+      <Grid item sm={3} xl={6}>
+        <ComicCard {...item}/>
+      </Grid>
+    )
   })
 
   return (
     <StyledHero>
-      <HeroImgContainer>
-        <HeroImgBg/>
-        <img src={thumbnail ? thumbnail.path + '.' + thumbnail.extension : ''} alt={name}/>
-      </HeroImgContainer>
+      <HeroThumbContainer>
+        <HeroThumbBg/>
+        <img src={thumbSrc} alt={name}/>
+      </HeroThumbContainer>
       <Container>
-          <HeroContent>
-            <HeroName>{name}</HeroName>
-            <HeroDescription>{description ? description : 'Description is empty'}</HeroDescription>
-            <HeroComicsContainer>
-              <HeroComicsList>
-                {comicsList}
-              </HeroComicsList>
-              <Link to={`/comics`}>See All Comics</Link>
-            </HeroComicsContainer>
-          </HeroContent>
+        <HeroContent>
+          <HeroName>{name}</HeroName>
+          <HeroDescription>{description ? description : 'Description is empty'}</HeroDescription>
+        </HeroContent>
+        <Grid container direction={"row"} lg={5}>
+          {comicsList}
+        </Grid>
+        <Link to={'/comics'}>See all comics</Link>
       </Container>
-</StyledHero>
-)
+    </StyledHero>
+  )
+}
+
+Hero.propTypes = {
+  name: PropTypes.string,
+  description: PropTypes.string,
+  thumbnail: PropTypes.object,
+  comics: PropTypes.array
 }
 
 export default Hero

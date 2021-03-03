@@ -4,7 +4,7 @@ import Input from "../../common/Input";
 import Button from "../../common/Button";
 import {useDispatch, useSelector} from "react-redux";
 import {searchHeroByNameRequest} from "../../store/modules/search/slice";
-import CharacterCard from "../../components/CharacterCard";
+import CharacterCard from "../../components/HeroCard";
 import {Container, Grid} from "@material-ui/core";
 import CharactersList from "../../components/CharactersList";
 import {Section} from "../../styles/global";
@@ -27,7 +27,7 @@ const SearchPage = () => {
 
   return (
     <Container>
-        <H1>Search your favorite superhero</H1>
+        <H1>Search superhero</H1>
         <Input placeholder={'Type superhero name here'} value={searchedName} onChange={handleChange}/>
         <Button onClick={handleClick}>Search</Button>
 

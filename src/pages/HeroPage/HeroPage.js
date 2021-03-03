@@ -12,11 +12,11 @@ const HeroPage = () => {
   let comics = useSelector(store => store.comics.items)
 
   useEffect(() => {
-      dispatch(getHeroRequest({id: id}))
-      dispatch(getHeroComicsRequest({id: id}))
+    dispatch(getHeroRequest({id: id}))
+    dispatch(getHeroComicsRequest({id: id}))
   }, [id])
 
-  return isLoading ? <div>Loading</div> : (
+  return (
     <>
       <Hero {...item} comics={comics}/>
     </>

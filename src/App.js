@@ -18,7 +18,6 @@ const Page = styled.div`
 const App = () => {
   return (
     <Router>
-      <GlobalStyle />
       <Page>
         <Header/>
         <Main>

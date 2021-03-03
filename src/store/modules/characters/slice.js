@@ -4,33 +4,24 @@ const slice = createSlice({
   name: 'characters',
   initialState: {
     items: [],
-    favorites: [],
     pagination: {
-      offset: undefined,
+      offset: 0,
       limit: undefined,
       total: undefined,
-      count: undefined
+      count: undefined,
+      page: 1
     },
-    fake: [],
     isLoading: false
   },
   reducers: {
-    setOffset: (state, action) => {
-      state.offset = action.payload.offset
-    },
     getCharactersRequest: (state, action) => {
-      state.pagination.offset = action.payload
       state.isLoading = true
     },
     getCharactersSuccess: (state, action) => {
-      let favs = [...state.favorites]
-      const byId = action.payload.data.results.reduce((byId, character) => {
-        character.favorite = favs.includes(character.id)
+      state.items = action.payload.data.results.reduce((byId, character) => {
         byId[character.id] = character
         return byId
       }, [])
-
-      state.items = byId
 
       state.pagination.limit = action.payload.data.limit
       state.pagination.total = action.payload.data.total
@@ -38,25 +29,26 @@ const slice = createSlice({
       state.pagination.offset = action.payload.data.offset
       state.isLoading = false
     },
+    setPagination: (state, action) => {
+      state.pagination.offset = action.payload.offset
+      state.pagination.page = action.payload.page
+    },
     addToFavorites: (state, action) => {
-      state.favorites.push(action.payload)
       state.items[action.payload].favorite = true
     },
     searchFavoritesRequest: () => {
 
     },
     removeFromFavorites: (state, action) => {
-      state.favorites = state.favorites.filter(item => item.id !== action.payload)
       state.items[action.payload].favorite = false
     },
   }
 })
 
 export const {
-  setOffset,
   getCharactersRequest,
   getCharactersSuccess,
-  addToFavorites,
+  setPagination,
   removeFromFavorites
 } = slice.actions
 

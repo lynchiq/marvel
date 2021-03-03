@@ -1,5 +1,5 @@
 import {Switch, Route} from 'react-router-dom'
-import {HeroPage, CharactersPage, HomePage, SearchPage, FavoritesPage, ComicPage} from "../pages";
+import {HeroPage, CharactersPage, HomePage, SearchPage, FavoritesPage, ComicPage, ComicsPage} from "../pages";
 
 export const Routes = () => {
   return (
@@ -9,6 +9,7 @@ export const Routes = () => {
         <Route path='/characters/:id' component={HeroPage} />
         <Route path='/favorites' component={FavoritesPage} />
         <Route path='/search' component={SearchPage} />
+        <Route path='/comics' exact component={ComicsPage} />
         <Route path='/comics/:id' component={ComicPage} />
       </Switch>
   )

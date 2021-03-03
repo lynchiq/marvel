@@ -3,8 +3,17 @@ import styled from "styled-components";
 export const StyledHero = styled.div`
   position: relative;
   overflow: auto;
-  min-height: calc(100vh - 100px);
-  color: #fff;
+  min-height: calc(100vh - 96.53px);
+  display: flex;
+  align-items: center;
+`
+
+export const HeroThumb = styled.img`
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(to right, #202020, #350000c9);
 `
 
 export const HeroContent = styled.div`
@@ -19,20 +28,11 @@ export const HeroName = styled.h1`
 
 export const HeroDescription = styled.p`
   font-size: 30px;
+  text-transform: none;
+  width: 70%;
 `
 
-export const HeroComicsContainer = styled.div`
-  cursor: pointer;
-  width: 50%;
-  text-align: center;
-  text-transform: uppercase;
-`
-
-export const HeroComicsList = styled.div`
-  display: flex;
-`
-
-export const HeroImgContainer = styled.div`
+export const HeroThumbContainer = styled.div`
   position: absolute;
   height: 100%;
   top: 0;
@@ -43,9 +43,9 @@ export const HeroImgContainer = styled.div`
   }
 `
 
-export const HeroImgBg = styled.div`
+export const HeroThumbBg = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, #202020, #350000c9);
+  background: linear-gradient(to right, #202020, #350000b8);
 `
