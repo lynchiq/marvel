@@ -1,8 +1,9 @@
 import {StyledButton, StyledButtonText} from "./Button.styles";
 
-const Button = ({children, onClick}) => {
+const Button = ({children, onClick = () => {}, disabled}) => {
+
   return (
-    <StyledButton onClick={(e) => onClick(e)}>
+    <StyledButton onClick={onClick} disabled={disabled}>
       <StyledButtonText>
         {children}
       </StyledButtonText>
