@@ -14,15 +14,34 @@ export const HomePageHero = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(${characters});
-  background-color: #000000d9;
-  text-transform: uppercase;
+  background-color: ${props => props.theme.colors.overlay};
+
+  @media ${props => props.theme.device.tablet} {
+    height: 250px;
+  }
 
   ${H1} {
     margin: 0;
-    font-size: 72px;
+    font-size: ${props => props.theme.fontSizes.xxl};
+    
+    @media ${props => props.theme.device.laptop} {
+      font-size: ${props => props.theme.fontSizes.xl};
+    }
+
+    @media ${props => props.theme.device.tablet} {
+      font-size: ${props => props.theme.fontSizes.lg};
+    }
   }
 
   ${Paragraph} {
-    font-size: 36px;
+    font-size: ${props => props.theme.fontSizes.lg};
+
+    @media ${props => props.theme.device.laptop} {
+      font-size: ${props => props.theme.fontSizes.md};
+    }
+
+    @media ${props => props.theme.device.tablet} {
+      font-size: ${props => props.theme.fontSizes.sm};
+    }
   }
 `

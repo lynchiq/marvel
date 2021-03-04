@@ -10,8 +10,6 @@ const generateAuthParam = () => {
   const hash = md5(timestamp + PRIVATE_KEY + PUBLIC_KEY);
   const params = {ts: timestamp, apikey: PUBLIC_KEY, hash}
 
-  debugger
-
   return params
 }
 

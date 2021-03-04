@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
     color: #fff;
     font-family: Bahnschrift, sans-serif;
     text-transform: uppercase;
+    box-sizing: border-box;
   }
   
   a {
