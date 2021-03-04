@@ -6,6 +6,8 @@ const theme = {
   colors: {
     black: '#000',
     red: '#ff0000',
+    white: '#fff',
+    disabled: '#919194'
   },
   fonts: [],
   fontSizes: {

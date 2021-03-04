@@ -1,17 +1,10 @@
-import {
-  HeroComics,
-  HeroContent,
-  HeroDescription,
-  HeroName,
-  HeroThumbBg,
-  HeroThumbContainer,
-  StyledHero
-} from "./Hero.styles";
+import {HeroContent, HeroDescription, HeroName, HeroThumbBg, HeroThumbContainer, StyledHero} from "./Hero.styles";
 import {Container, Grid} from "@material-ui/core";
 import createThumbnailSrc from "../../utils/createThumbnailSrc";
 import ComicCard from "../ComicCard";
 import {Link} from "react-router-dom";
-import PropTypes, {array} from "prop-types"
+import PropTypes from "prop-types"
+import stripHtml from "../../utils/stripHtml";
 
 const Hero = ({name, description, thumbnail, comics = []}) => {
 
@@ -39,7 +32,7 @@ const Hero = ({name, description, thumbnail, comics = []}) => {
       <Container>
         <HeroContent>
           <HeroName>{name}</HeroName>
-          <HeroDescription>{description ? description : 'Description is empty'}</HeroDescription>
+          <HeroDescription>{description ? stripHtml(description) : 'Sorry, description is empty.'}</HeroDescription>
         </HeroContent>
         <Grid container direction={"row"} lg={5}>
           {comicsList}

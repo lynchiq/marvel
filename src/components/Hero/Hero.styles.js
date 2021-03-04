@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {H1} from "../../styles/typography";
 
 export const StyledHero = styled.div`
   position: relative;
@@ -6,14 +7,10 @@ export const StyledHero = styled.div`
   min-height: calc(100vh - 96.53px);
   display: flex;
   align-items: center;
-`
-
-export const HeroThumb = styled.img`
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  background: linear-gradient(to right, #202020, #350000c9);
+  
+  ${H1}{
+    margin-top: 0;
+  }
 `
 
 export const HeroContent = styled.div`
