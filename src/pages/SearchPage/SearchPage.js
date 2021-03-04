@@ -5,12 +5,13 @@ import {Container, Grid} from "@material-ui/core";
 import CharactersList from "../../components/CharactersList";
 import {Section} from "../../styles/global";
 import SearchForm from "../../components/SearchForm";
+import {selectSearchPage} from "../../store/modules/search/selectors";
 
 const SearchPage = () => {
 
   const dispatch = useDispatch()
 
-  const {items, isLoading} = useSelector(state => state.search)
+  const {items, isLoading} = useSelector(selectSearchPage)
 
   const handleSubmit = (data) => {
     dispatch(searchHeroByNameRequest(data))
@@ -20,13 +21,13 @@ const SearchPage = () => {
     <Container>
         <H1>Search superhero</H1>
 
-        <SearchForm onSubmit={handleSubmit}/>
+        <SearchForm onSubmit={handleSubmit}  isLoading={isLoading}/>
 
         <Section>
           {
             isLoading
               ? 'loading...'
-              : <Grid>
+              : <Grid container>
                 <CharactersList characters={items}/>
               </Grid>
           }

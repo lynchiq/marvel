@@ -1,12 +1,16 @@
 import {StyledButton, StyledButtonText} from "./Button.styles";
 
-const Button = ({children, onClick = () => {}, disabled}) => {
+const Button = ({children, onClick = () => {}, disabled, isLoading = false}) => {
 
   return (
     <StyledButton onClick={onClick} disabled={disabled}>
-      <StyledButtonText>
-        {children}
-      </StyledButtonText>
+      {
+        isLoading
+          ? <span>Loading...</span>
+          : <StyledButtonText>
+            {children}
+          </StyledButtonText>
+      }
     </StyledButton>
   )
 }

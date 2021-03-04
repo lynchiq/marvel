@@ -5,6 +5,7 @@ const slice = createSlice({
   initialState: {
     item: {},
     items: [],
+    offset: 0,
     isLoading: false
   },
   reducers: {
@@ -14,12 +15,19 @@ const slice = createSlice({
     getHeroComicsRequest: (state, action) => {
       state.isLoading = true
     },
+    setComicsOffset: (state, action) => {
+      alert(action.payload)
+      state.offset = action.payload
+    },
     getComicSuccess: (state, action) => {
       state.item = action.payload.data
       state.isLoading = false
     },
     getHeroComicsSuccess: (state, action) => {
-      state.items = action.payload.data
+      state.items = [...state.items, ...action.payload.data.results]
+      state.offset = action.payload.data.offset
+      state.limit = action.payload.data.limit
+      state.total = action.payload.data.total
       state.isLoading = false
     },
     getHeroComicsError: () => {
@@ -29,6 +37,7 @@ const slice = createSlice({
 })
 
 export const {
+  setComicsOffset,
   getComicRequest,
   getComicSuccess,
   getHeroComicsRequest,
