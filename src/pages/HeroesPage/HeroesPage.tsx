@@ -6,9 +6,9 @@ import {RootState} from "../../store/modules/rootReducer";
 import {selectAllHeroes} from "../../store/modules/heroes/reducer";
 import {Headling} from "../../styles/typography";
 import HeroesList from "../../components/HeroesList/HeroesList";
-import {useEffect} from "react";
+import React, {useEffect} from "react";
 
-const HeroesPage = () => {
+const HeroesPage: React.FunctionComponent = () => {
 
   const dispatch = useDispatch()
   const isLoading = useSelector((state : RootState) => state.heroes.loading)

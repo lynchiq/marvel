@@ -22,6 +22,7 @@ const heroesReducer = createReducer(initialState, builder => {
 })
 
 export const {
+  selectById: selectHeroById,
   selectAll: selectAllHeroes
 } = heroesAdapter.getSelectors((state: RootState) => state.heroes)
 

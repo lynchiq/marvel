@@ -10,7 +10,7 @@ const HeroCard: React.FunctionComponent<Hero> = ({id, name, description, thumbna
   return (
     <StyledHeroCard>
       <HeroCardThumbnail src={thumbSrc} alt={name}/>
-      <HeroCardName to={`/characters/${id}`}>{name}</HeroCardName>
+      <HeroCardName to={`/heroes/${id}`}>{name}</HeroCardName>
     </StyledHeroCard>
   )
 }
