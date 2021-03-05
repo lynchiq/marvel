@@ -7,10 +7,9 @@ const PRIVATE_KEY = process.env.REACT_APP_PRIVATE_KEY
 
 const generateAuthParam = () => {
   const timestamp = Date.now();
+  // @ts-ignore
   const hash = md5(timestamp + PRIVATE_KEY + PUBLIC_KEY);
-  const params = {ts: timestamp, apikey: PUBLIC_KEY, hash}
-
-  return params
+  return {ts: timestamp, apikey: PUBLIC_KEY, hash}
 }
 
 export default axios.create({

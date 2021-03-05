@@ -3,7 +3,7 @@ export const charactersPageSelector = (state) => {
 }
 
 export const favoriteCharactersSelector = (state) => {
-  return state.characters.items.filter(item => item.favorite === true)
+  return state.characters.favorites
 }
 
 export const charactersPaginationSelector = (state) => {

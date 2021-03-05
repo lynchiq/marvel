@@ -3,9 +3,9 @@ import {useDispatch, useSelector} from "react-redux"
 import {charactersPageSelector} from "../../store/modules/characters/selectors"
 import {getCharactersRequest, setPagination} from "../../store/modules/characters/slice"
 import {Container, Grid} from "@material-ui/core"
-import {H1} from "../../styles/typography";
+import {Headling} from "../../styles/typography";
 import {Section} from "../../styles/global";
-import CharactersList from "../../components/CharactersList";
+import CharactersList from "../../components/HeroesList";
 import {Pagination} from "@material-ui/lab";
 
 const CharactersPage = () => {
@@ -18,7 +18,7 @@ const CharactersPage = () => {
 
   useEffect(() => {
     dispatch(getCharactersRequest())
-  }, [])
+  }, [dispatch])
 
   const changePage = (event, value) => {
     setCurrentPage(value)
@@ -33,10 +33,9 @@ const CharactersPage = () => {
     <Section>
       <Container>
         <Grid container direction={"row"} justify={"space-between"} alignItems={"center"}>
-          <H1>Characters</H1>
+          <Headling>Characters</Headling>
           <Pagination page={currentPage} count={pageCount} onChange={changePage} color="secondary" className={'pagination'}/>
         </Grid>
-        {isLoading ? 'Loading' : <CharactersList characters={items}/>}
       </Container>
     </Section>
   )

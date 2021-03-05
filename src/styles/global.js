@@ -16,7 +16,6 @@ export const GlobalStyle = createGlobalStyle`
   
   a {
     text-decoration: none!important;
-    color: inherit!important;
   }
 
   .MuiPaginationItem-root {
@@ -25,6 +24,16 @@ export const GlobalStyle = createGlobalStyle`
 
   .MuiPaginationItem-textSecondary.Mui-selected{
     background-color: #e62429!important;
+  }
+`
+
+export const Page = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  
+  main {
+    flex-grow: 1;
   }
 `
 

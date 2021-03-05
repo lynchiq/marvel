@@ -1,9 +1,10 @@
-import {createSlice} from "@reduxjs/toolkit";
+import {createEntityAdapter, createSlice} from "@reduxjs/toolkit";
 
 const slice = createSlice({
   name: 'characters',
   initialState: {
     items: [],
+    favorites: [],
     pagination: {
       offset: 0,
       limit: undefined,
@@ -34,18 +35,17 @@ const slice = createSlice({
       state.pagination.page = action.payload.page
     },
     addToFavorites: (state, action) => {
-      state.items[action.payload].favorite = true
-    },
-    searchFavoritesRequest: () => {
-
+      state.favorites.push(action.payload)
     },
     removeFromFavorites: (state, action) => {
-      state.items[action.payload].favorite = false
+      state.favorites = state.favorites.filter(item => item.id !== action.payload.id)
     },
   }
 })
 
+
 export const {
+  addToFavorites,
   getCharactersRequest,
   getCharactersSuccess,
   setPagination,

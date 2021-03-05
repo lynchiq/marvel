@@ -1,7 +1,0 @@
-export {default as HomePage} from './HomePage/HomePage'
-export {default as CharactersPage} from './CharactersPage/CharactersPage'
-export {default as HeroPage} from './HeroPage/HeroPage'
-export {default as SearchPage} from './SearchPage/SearchPage'
-export {default as FavoritesPage} from './FavoritesPage/FavoritesPage'
-export {default as ComicsPage} from './ComicsPage/ComicsPage'
-export {default as ComicPage} from './ComicPage/ComicPage'

@@ -1,8 +1,8 @@
-import {H1} from "../../styles/typography";
+import {H1, Headling} from "../../styles/typography";
 import {useDispatch, useSelector} from "react-redux";
 import {searchHeroByNameRequest} from "../../store/modules/search/slice";
-import {Container, Grid} from "@material-ui/core";
-import CharactersList from "../../components/CharactersList";
+import {Box, Container, Grid} from "@material-ui/core";
+import CharactersList from "../../components/HeroesList";
 import {Section} from "../../styles/global";
 import SearchForm from "../../components/SearchForm";
 import {selectSearchPage} from "../../store/modules/search/selectors";
@@ -19,19 +19,20 @@ const SearchPage = () => {
 
   return (
     <Container>
-        <H1>Search superhero</H1>
+        <Headling center={true}>Search superhero</Headling>
 
-        <SearchForm onSubmit={handleSubmit}  isLoading={isLoading}/>
-
-        <Section>
-          {
-            isLoading
-              ? 'loading...'
-              : <Grid container>
-                <CharactersList characters={items}/>
-              </Grid>
-          }
-        </Section>
+        <Box marginTop={7}>
+          <SearchForm onSubmit={handleSubmit}  isLoading={isLoading}/>
+          <Section>
+            {
+              isLoading
+                ? 'loading...'
+                : <Grid container>
+                  <CharactersList characters={items}/>
+                </Grid>
+            }
+          </Section>
+        </Box>
 
     </Container>
   )

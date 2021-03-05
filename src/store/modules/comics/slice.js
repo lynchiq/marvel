@@ -16,7 +16,6 @@ const slice = createSlice({
       state.isLoading = true
     },
     setComicsOffset: (state, action) => {
-      alert(action.payload)
       state.offset = action.payload
     },
     getComicSuccess: (state, action) => {

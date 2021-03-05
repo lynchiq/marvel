@@ -1,5 +1,5 @@
 import {H1} from "../../styles/typography";
-import {Container, Grid} from "@material-ui/core";
+import {Box, Container, Grid} from "@material-ui/core";
 import {useDispatch, useSelector} from "react-redux";
 import ComicCard from "../../components/ComicCard";
 import Button from "../../common/Button";
@@ -35,10 +35,12 @@ const ComicsPage = () => {
     <>
       <Container>
         <H1 center>Comics</H1>
-        <Grid container>
+        <Grid container justify={"center"}>
           {comicsList}
         </Grid>
-        <Button onClick={loadMore} disabled={isLoading} isLoading={isLoading}>load more</Button>
+        <Box display={"flex"} justifyContent={"center"} marginBottom={2}>
+          <Button onClick={loadMore} disabled={isLoading} isLoading={isLoading}>load more</Button>
+        </Box>
       </Container>
     </>
   )

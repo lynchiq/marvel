@@ -1,8 +1,9 @@
 import {HeroCardName, HeroCardThumbnail, StyledHeroCard} from "./HeroCard.styles";
 import createThumbnailSrc from "../../utils/createThumbnailSrc";
-import PropTypes from 'prop-types';
+import React from "react";
+import {Hero} from "../../store/modules/heroes/types";
 
-const HeroCard = ({id, name, thumbnail}) => {
+const HeroCard: React.FunctionComponent<Hero> = ({id, name, description, thumbnail}) => {
 
   const thumbSrc = createThumbnailSrc(thumbnail)
 
@@ -12,12 +13,6 @@ const HeroCard = ({id, name, thumbnail}) => {
       <HeroCardName to={`/characters/${id}`}>{name}</HeroCardName>
     </StyledHeroCard>
   )
-}
-
-HeroCard.propTypes = {
-  id: PropTypes.number,
-  name: PropTypes.string,
-  thumbnail: PropTypes.object
 }
 
 export default HeroCard
