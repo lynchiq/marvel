@@ -1,5 +1,5 @@
 import {createAction} from "@reduxjs/toolkit";
-import {HeroType} from "./types";
+import {HeroType} from "../../../types/types";
 
 type getHeroSuccessPayloadType = {
   heroes: HeroType[],

@@ -1,5 +1,5 @@
 import {createEntityAdapter, createReducer} from "@reduxjs/toolkit";
-import {HeroType} from "../heroes/types";
+import {HeroType} from "../../../types/types";
 import {setFavoriteHero, unsetFavoriteHero} from "./actions";
 import {RootState} from "../rootReducer";
 

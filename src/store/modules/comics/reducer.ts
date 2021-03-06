@@ -1,5 +1,5 @@
 import {createEntityAdapter, createReducer} from "@reduxjs/toolkit";
-import {ComicType} from "../heroes/types";
+import {ComicType} from "../../../types/types";
 import {getComics, getMoreComics} from "./actions";
 import {RootState} from "../rootReducer";
 

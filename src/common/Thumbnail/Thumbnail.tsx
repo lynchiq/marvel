@@ -1,6 +1,6 @@
 import createThumbnailSrc from "../../utils/createThumbnailSrc";
 import {StyledThumbnail} from "./Thumbnail.styles";
-import {ThumbnailType} from "../../store/modules/heroes/types";
+import {ThumbnailType} from "../../types/types";
 import React from "react";
 
 type Props = {

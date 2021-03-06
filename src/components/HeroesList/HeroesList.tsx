@@ -1,6 +1,6 @@
 import {Grid} from "@material-ui/core";
 import HeroCard from "../HeroCard";
-import {HeroType} from "../../store/modules/heroes/types";
+import {HeroType} from "../../types/types";
 import React from "react";
 
 type Props = {

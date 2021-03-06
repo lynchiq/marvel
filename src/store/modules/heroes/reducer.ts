@@ -1,4 +1,4 @@
-import {HeroType} from "./types";
+import {HeroType} from "../../../types/types";
 import {createEntityAdapter, createReducer} from "@reduxjs/toolkit";
 import {getHeroes, getHeroesByName, setHeroes, setHeroesCurrentPage, unsetHeroes} from "./actions";
 import {RootState} from "../rootReducer";

@@ -3,7 +3,7 @@ import {H1, H2, Paragraph} from "../../styles/typography";
 import Thumbnail from "../../common/Thumbnail";
 import {Box, Grid} from "@material-ui/core";
 import React from "react";
-import {ComicType} from "../../store/modules/heroes/types";
+import {ComicType} from "../../types/types";
 import stripHtml from "../../utils/stripHtml";
 
 

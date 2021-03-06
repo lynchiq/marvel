@@ -1,4 +1,4 @@
-import {ThumbnailType} from "../store/modules/heroes/types";
+import {ThumbnailType} from "../types/types";
 
 const createThumbnailSrc = (thumbnail: ThumbnailType) => {
   return thumbnail ? [thumbnail.path, thumbnail.extension].join('.') : ''

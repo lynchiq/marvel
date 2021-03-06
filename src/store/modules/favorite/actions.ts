@@ -1,5 +1,5 @@
 import {createAction} from "@reduxjs/toolkit";
-import {HeroType} from "../heroes/types";
+import {HeroType} from "../../../types/types";
 
 export const setFavoriteHero = createAction<HeroType, "SET_FAVORITE_HERO">("SET_FAVORITE_HERO")
 

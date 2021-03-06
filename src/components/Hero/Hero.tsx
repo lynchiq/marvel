@@ -5,7 +5,7 @@ import stripHtml from "../../utils/stripHtml";
 import {A} from "../../styles/typography";
 import Button from "../../common/Button";
 import React from "react";
-import {HeroType} from "../../store/modules/heroes/types";
+import {HeroType} from "../../types/types";
 
 type Props = {
   hero: HeroType,

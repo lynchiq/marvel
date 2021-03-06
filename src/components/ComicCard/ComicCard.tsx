@@ -1,6 +1,6 @@
 import {ComicCardBg, ComicCardImg, StyledComicCard} from "./ComicCard.styles";
 import React from "react";
-import {ComicType} from "../../store/modules/heroes/types";
+import {ComicType} from "../../types/types";
 import createThumbnailSrc from "../../utils/createThumbnailSrc";
 
 const ComicCard: React.FC<ComicType> = ({id, title, thumbnail}) => {

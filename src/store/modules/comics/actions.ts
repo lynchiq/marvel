@@ -1,5 +1,5 @@
 import {createAction} from "@reduxjs/toolkit";
-import {ComicType} from "../heroes/types";
+import {ComicType} from "../../../types/types";
 
 export const getComics = {
   request: createAction<number, "GET_COMICS_REQUEST_START">("GET_COMICS_REQUEST_START"),

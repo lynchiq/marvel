@@ -1,7 +1,7 @@
 import {HeroCardName, HeroCardThumbnail, StyledHeroCard} from "./HeroCard.styles";
 import createThumbnailSrc from "../../utils/createThumbnailSrc";
 import React from "react";
-import {HeroType} from "../../store/modules/heroes/types";
+import {HeroType} from "../../types/types";
 
 const HeroCard: React.FunctionComponent<HeroType> = ({id, name, description, thumbnail}) => {
 
