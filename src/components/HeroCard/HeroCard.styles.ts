@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import {Link} from "react-router-dom";
-import FavoriteBtn from "../../common/FavoriteBtn";
 
 export const StyledHeroCard = styled.div`
   position: relative;
@@ -8,12 +7,6 @@ export const StyledHeroCard = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  ${FavoriteBtn}{
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }
 `
 
 export const HeroCardThumbnail = styled.img`

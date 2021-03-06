@@ -1,3 +1,3 @@
 import {createEntityAdapter} from "@reduxjs/toolkit";
-import {Hero} from "./types";
+import {HeroType} from "./types";
 

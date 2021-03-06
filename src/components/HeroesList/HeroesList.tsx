@@ -1,10 +1,10 @@
 import {Grid} from "@material-ui/core";
 import HeroCard from "../HeroCard";
-import {Hero} from "../../store/modules/heroes/types";
+import {HeroType} from "../../store/modules/heroes/types";
 import React from "react";
 
 type Props = {
-  heroes: Hero[]
+  heroes: HeroType[]
 }
 
 const HeroesList: React.FunctionComponent<Props> = ({heroes}) => {
