@@ -1,9 +1,8 @@
 import {createEntityAdapter, createReducer} from "@reduxjs/toolkit";
 import {HeroType} from "../../../types/types";
 import {setFavoriteHero, unsetFavoriteHero} from "./actions";
-import {RootState} from "../rootReducer";
 
-const favoriteHeroesAdapter = createEntityAdapter<HeroType>({
+export const favoriteHeroesAdapter = createEntityAdapter<HeroType>({
   selectId: (hero) => hero.id,
   sortComparer: (a, b) => a.name.localeCompare(b.name)
 })
@@ -19,10 +18,5 @@ const favoriteHeroesReducer = createReducer(initialState, builder => {
       favoriteHeroesAdapter.removeOne(state, action.payload)
     })
 })
-
-export const {
-  selectById: selectFavoriteHero,
-  selectAll: selectFavoriteHeroes
-} = favoriteHeroesAdapter.getSelectors((state: RootState) => state.favoriteHeroes)
 
 export default favoriteHeroesReducer

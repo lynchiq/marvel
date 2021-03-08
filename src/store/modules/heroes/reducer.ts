@@ -1,7 +1,6 @@
 import {HeroType} from "../../../types/types";
 import {createEntityAdapter, createReducer} from "@reduxjs/toolkit";
 import {getHeroes, getHeroesByName, setHeroes, setHeroesCurrentPage, unsetHeroes} from "./actions";
-import {RootState} from "../rootReducer";
 
 export const heroesAdapter = createEntityAdapter<HeroType>({
   selectId: (hero) => hero.id,
@@ -44,10 +43,5 @@ const heroesReducer = createReducer(initialState, builder => {
       state.currentPage = action.payload
     })
 })
-
-export const {
-  selectById: selectHeroById,
-  selectAll: selectAllHeroes
-} = heroesAdapter.getSelectors((state: RootState) => state.heroes)
 
 export default heroesReducer

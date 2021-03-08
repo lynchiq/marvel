@@ -13,7 +13,7 @@ export const H3 = styled.h3`
 export const Paragraph = styled.p`
 `
 
-export const Headling = styled(H1)`
+export const Heading = styled(H1)`
   font-size: ${props => props.theme.fontSizes.lg};
 `
 

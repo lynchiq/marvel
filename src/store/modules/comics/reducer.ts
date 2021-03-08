@@ -1,7 +1,6 @@
 import {createEntityAdapter, createReducer} from "@reduxjs/toolkit";
 import {ComicType} from "../../../types/types";
 import {getComics, getMoreComics} from "./actions";
-import {RootState} from "../rootReducer";
 
 export const comicsAdapter = createEntityAdapter<ComicType>({
   selectId: (comic) => comic.id,
@@ -30,10 +29,5 @@ const comicsReducer = createReducer(initialState, builder => {
       state.loading = false
     })
 })
-
-export const {
-  selectById: selectComicById,
-  selectAll: selectAllComics
-} = comicsAdapter.getSelectors((state: RootState) => state.comics)
 
 export default comicsReducer

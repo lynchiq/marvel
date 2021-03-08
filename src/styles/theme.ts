@@ -1,5 +1,3 @@
-import {ThemeProvider} from 'styled-components'
-
 const screenSizes = {
   mobileS: '320px',
   mobileM: '375px',

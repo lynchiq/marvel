@@ -1,4 +1,4 @@
-import {H1, Headling, Paragraph} from "../../styles/typography";
+import {H1, Heading, Paragraph} from "../../styles/typography";
 import {HomePageHero} from "./HomePage.styles";
 import {Container} from "@material-ui/core";
 import {Section} from "../../styles/global";
@@ -24,7 +24,7 @@ const HomePage = () => {
       </HomePageHero>
       <Container>
         <Section>
-          <Headling>Avengers</Headling>
+          <Heading>Avengers</Heading>
           <CharactersList heroes={avengers}/>
         </Section>
       </Container>
