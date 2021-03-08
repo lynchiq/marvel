@@ -3,12 +3,11 @@ import {useDispatch, useSelector} from "react-redux";
 import ComicCard from "../../components/ComicCard";
 import Button from "../../common/Button";
 import React, {useEffect} from "react";
-import {Headling} from "../../styles/typography";
+import {Heading} from "../../styles/typography";
 import {useParams} from "react-router-dom";
 import {getComics, getMoreComics} from "../../store/modules/comics/actions";
 import {RootState} from "../../store/modules/rootReducer";
-import { selectAllComics } from "../../store/modules/comics/reducer";
-import {selectComicsLoading} from "../../store/modules/comics/selectors";
+import {selectAllComics, selectComicsLoading} from "../../store/modules/comics/selectors";
 
 const ComicsPage = () => {
 
@@ -42,7 +41,7 @@ const ComicsPage = () => {
     <>
       <Container>
         <Box display={"flex"} justifyContent={"center"}>
-          <Headling>Comics</Headling>
+          <Heading>Comics</Heading>
         </Box>
         <Grid container justify={"center"}>
           {comicsList}

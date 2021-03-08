@@ -4,7 +4,7 @@ import {Container} from "@material-ui/core";
 import {Section} from "../../styles/global";
 import {useParams} from "react-router-dom";
 import {RootState} from "../../store/modules/rootReducer";
-import {selectComicById} from "../../store/modules/comics/reducer";
+import { selectComicById } from "../../store/modules/comics/selectors";
 
 const ComicPage = () => {
   const {comicId}: any = useParams();

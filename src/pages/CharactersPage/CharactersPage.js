@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux"
 import {charactersPageSelector} from "../../store/modules/characters/selectors"
 import {getCharactersRequest, setPagination} from "../../store/modules/characters/slice"
 import {Container, Grid} from "@material-ui/core"
-import {Headling} from "../../styles/typography";
+import {Heading} from "../../styles/typography";
 import {Section} from "../../styles/global";
 import CharactersList from "../../components/HeroesList";
 import {Pagination} from "@material-ui/lab";
@@ -33,7 +33,7 @@ const CharactersPage = () => {
     <Section>
       <Container>
         <Grid container direction={"row"} justify={"space-between"} alignItems={"center"}>
-          <Headling>Characters</Headling>
+          <Heading>Characters</Heading>
           <Pagination page={currentPage} count={pageCount} onChange={changePage} color="secondary" className={'pagination'}/>
         </Grid>
       </Container>

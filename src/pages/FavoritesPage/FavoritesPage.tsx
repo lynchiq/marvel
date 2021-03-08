@@ -1,10 +1,10 @@
 import {Container} from "@material-ui/core";
 import CharactersList from "../../components/HeroesList";
 import {Section} from "../../styles/global";
-import {Headling} from "../../styles/typography";
+import {Heading} from "../../styles/typography";
 import {useSelector} from "react-redux";
 import {RootState} from "../../store/modules/rootReducer";
-import { selectFavoriteHeroes } from "../../store/modules/favorite/reducer";
+import { selectFavoriteHeroes } from "../../store/modules/favorite/selectors";
 
 const FavoritesPage = () => {
 
@@ -13,7 +13,7 @@ const FavoritesPage = () => {
   return (
     <Section>
       <Container>
-        <Headling>Favorite characters</Headling>
+        <Heading>Favorite characters</Heading>
         <CharactersList heroes={favorites}/>
       </Container>
     </Section>

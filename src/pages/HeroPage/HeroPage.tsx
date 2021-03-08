@@ -1,14 +1,14 @@
 import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {useParams} from "react-router-dom";
-import {selectHeroById} from "../../store/modules/heroes/reducer";
 import {RootState} from "../../store/modules/rootReducer";
 import Hero from "../../components/Hero";
 import {Container} from "@material-ui/core";
 import {Section} from "../../styles/global";
 import {H1} from "../../styles/typography";
 import {setFavoriteHero, unsetFavoriteHero} from "../../store/modules/favorite/actions";
-import {selectFavoriteHero} from "../../store/modules/favorite/reducer";
+import { selectHeroById } from "../../store/modules/heroes/selectors";
+import { selectFavoriteHero } from "../../store/modules/favorite/selectors";
 
 const HeroPage: React.FC = () => {
 
