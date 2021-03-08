@@ -9,22 +9,17 @@ type Props = {
 
 const HeroesList: React.FunctionComponent<Props> = ({heroes}) => {
 
-  const charactersList = heroes.map((hero, i) => {
+  const heroesList = heroes.map((hero, i) => {
     return (
-      <Grid item lg={3} md={4} sm={6} key={hero.id}>
-        <HeroCard
-          id={hero.id}
-          name={hero.name}
-          thumbnail={hero.thumbnail}
-          description={hero.description}
-        />
+      <Grid key={hero.id} item lg={3} md={4} sm={6}>
+        <HeroCard {...hero}/>
       </Grid>
     )
   })
 
   return (
     <Grid container spacing={2}>
-      {charactersList}
+      {heroesList}
     </Grid>
   )
 }
