@@ -1,13 +1,22 @@
 import styled, { createGlobalStyle } from 'styled-components'
-import './normalize.css';
+import normalize from './normalize.css';
+import Marvel from '../assets/fonts/Marvel/Marvel-Bold.ttf'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export const GlobalStyle = createGlobalStyle`
   
+  ${normalize}
+
+
+  @font-face {
+    font-family: "Marvel";
+    src: url(${Marvel});
+  }
+
   * {
     color: #fff;
-    font-family: Bahnschrift, sans-serif;
+    font-family: 'Marvel', sans-serif;
     text-transform: uppercase;
     box-sizing: border-box;
   }

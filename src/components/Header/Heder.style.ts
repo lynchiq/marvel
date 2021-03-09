@@ -18,7 +18,6 @@ export const Logo = styled.div`
   text-transform: uppercase;
   font-size: ${props => props.theme.fontSizes.xl};
   background-color: ${props => props.theme.colors.red};
-  font-family: fantasy;
   text-align: center;
 `
 
@@ -34,7 +33,6 @@ export const Menu = styled.ul`
 
 export const MenuItem = styled.li`
   cursor: pointer;
-  font-weight: 800;
   border-bottom: 2px solid transparent;
 
   :hover {

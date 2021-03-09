@@ -5,7 +5,7 @@ export const Header = () => {
   return (
     <HeaderWrapper>
       <MenuContainer>
-        <Logo>super heroes</Logo>
+        <Logo>Marvel</Logo>
       </MenuContainer>
       <MenuContainer>
         <Menu>
