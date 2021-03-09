@@ -1,39 +1,38 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
-export type InputValidatorType = (value: string) => boolean
+export type InputValidatorType = (value: string) => boolean;
 
 const useInput = (initialValue: string, validators: InputValidatorType[]) => {
-
-  const [value, setValue] = useState(initialValue)
-  const [error, setError] = useState(false)
+  const [value, setValue] = useState(initialValue);
+  const [error, setError] = useState(false);
 
   const isValid = () => {
-    let valid = true
+    let valid = true;
 
-    validators.forEach(validator => {
+    validators.forEach((validator) => {
       if (!validator(value)) {
-        valid = false
-        setError(true)
-        return
+        valid = false;
+        setError(true);
+        return;
       }
 
-      setError(false)
-    })
+      setError(false);
+    });
 
-    return valid
-  }
+    return valid;
+  };
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = e.target.value
-    setValue(newValue)
-  }
+    const newValue = e.target.value;
+    setValue(newValue);
+  };
 
   return {
     value,
     error,
     onChange,
-    isValid
-  }
-}
+    isValid,
+  };
+};
 
-export default useInput
+export default useInput;

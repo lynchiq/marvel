@@ -1,19 +1,19 @@
-import {BrowserRouter as Router} from 'react-router-dom'
-import {Routes} from "./services/routes"
-import {Header} from "./components/Header/Header"
-import {Page, Main} from "./styles/global";
+import { BrowserRouter as Router } from "react-router-dom";
+import { Routes } from "./services/routes";
+import { Header } from "./components/Header/Header";
+import { Page, Main } from "./styles/global";
 
 const App = () => {
   return (
     <Router>
       <Page>
-        <Header/>
+        <Header />
         <Main>
-          <Routes/>
+          <Routes />
         </Main>
       </Page>
     </Router>
   );
-}
+};
 
 export default App;

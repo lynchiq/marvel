@@ -1,5 +1,11 @@
-import {Link} from "react-router-dom";
-import {HeaderWrapper, Logo, Menu, MenuContainer, MenuItem} from "./Heder.style";
+import { Link } from "react-router-dom";
+import {
+  HeaderWrapper,
+  Logo,
+  Menu,
+  MenuContainer,
+  MenuItem,
+} from "./Heder.style";
 
 export const Header = () => {
   return (
@@ -10,19 +16,19 @@ export const Header = () => {
       <MenuContainer>
         <Menu>
           <MenuItem>
-            <Link to={'/'}>Home</Link>
+            <Link to={"/"}>Home</Link>
           </MenuItem>
           <MenuItem>
-            <Link to={'/heroes'}>Heroes</Link>
+            <Link to={"/heroes"}>Heroes</Link>
           </MenuItem>
           <MenuItem>
-            <Link to={'/favorites'}>Favorites</Link>
+            <Link to={"/favorites"}>Favorites</Link>
           </MenuItem>
           <MenuItem>
-            <Link to={'/search'}>Search</Link>
+            <Link to={"/search"}>Search</Link>
           </MenuItem>
         </Menu>
       </MenuContainer>
     </HeaderWrapper>
-  )
-}
+  );
+};

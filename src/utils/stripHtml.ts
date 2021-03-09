@@ -1,5 +1,5 @@
 const stripHtml = (string: string) => {
-  return string.replace(/(<([^>]+)>)/gi, "")
-}
+  return string.replace(/(<([^>]+)>)/gi, "");
+};
 
-export default stripHtml
+export default stripHtml;

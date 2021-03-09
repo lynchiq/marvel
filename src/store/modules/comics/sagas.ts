@@ -1,40 +1,41 @@
 import api from "../../../services/api";
-import {all, call, put, takeLatest} from "@redux-saga/core/effects";
-import {getComics, getMoreComics} from "./actions";
+import { all, call, put, takeLatest } from "@redux-saga/core/effects";
+import { getComics, getMoreComics } from "./actions";
 
 type getComicsRequestType = {
-  payload: number
-}
+  payload: number;
+};
 
-function* fetchHeroComics({payload}: getComicsRequestType) {
-
+function* fetchHeroComics({ payload }: getComicsRequestType) {
   try {
-    let {data} =  yield call(api.get, `/characters/${payload}/comics`)
-    yield put(getComics.success(data.data.results))
+    let { data } = yield call(api.get, `/characters/${payload}/comics`);
+    yield put(getComics.success(data.data.results));
   } catch (e) {
-    yield put(getComics.error())
+    yield put(getComics.error());
   }
 }
 
 type getMoreComicsRequestType = {
   payload: {
-    id: number,
-    offset: number
-  }
-}
+    id: number;
+    offset: number;
+  };
+};
 
-function* fetchMoreHeroComics({payload}: getMoreComicsRequestType) {
+function* fetchMoreHeroComics({ payload }: getMoreComicsRequestType) {
   try {
-    let {data} =  yield call(api.get, `/characters/${payload.id}/comics`, {
+    let { data } = yield call(api.get, `/characters/${payload.id}/comics`, {
       params: {
-        offset: payload.offset
-      }
-    })
-    yield put(getMoreComics.success(data.data.results))
+        offset: payload.offset,
+      },
+    });
+    yield put(getMoreComics.success(data.data.results));
   } catch (e) {
-    yield put(getMoreComics.error())
+    yield put(getMoreComics.error());
   }
 }
 
-
-export default all([takeLatest(getComics.request, fetchHeroComics), takeLatest(getMoreComics.request, fetchMoreHeroComics)]);
+export default all([
+  takeLatest(getComics.request, fetchHeroComics),
+  takeLatest(getMoreComics.request, fetchMoreHeroComics),
+]);

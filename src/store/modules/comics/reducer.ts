@@ -1,39 +1,39 @@
-import {createEntityAdapter, createReducer} from "@reduxjs/toolkit";
-import {ComicType} from "../../../types/types";
-import {getComics, getMoreComics} from "./actions";
+import { createEntityAdapter, createReducer } from "@reduxjs/toolkit";
+import { ComicType } from "../../../types/types";
+import { getComics, getMoreComics } from "./actions";
 
 export const comicsAdapter = createEntityAdapter<ComicType>({
   selectId: (comic) => comic.id,
-  sortComparer: (a, b) => a.title.localeCompare(b.title)
-})
+  sortComparer: (a, b) => a.title.localeCompare(b.title),
+});
 
 const initialState = comicsAdapter.getInitialState({
-  loading: false
-})
+  loading: false,
+});
 
-const comicsReducer = createReducer(initialState, builder => {
+const comicsReducer = createReducer(initialState, (builder) => {
   builder
     .addCase(getComics.request, (state, action) => {
-      comicsAdapter.removeAll(state)
-      state.loading = true
+      comicsAdapter.removeAll(state);
+      state.loading = true;
     })
     .addCase(getComics.success, (state, action) => {
-      comicsAdapter.upsertMany(state, action.payload)
-      state.loading = false
+      comicsAdapter.upsertMany(state, action.payload);
+      state.loading = false;
     })
     .addCase(getComics.error, (state) => {
-      state.loading = false
+      state.loading = false;
     })
     .addCase(getMoreComics.request, (state, action) => {
-      state.loading = true
+      state.loading = true;
     })
     .addCase(getMoreComics.success, (state, action) => {
-      comicsAdapter.upsertMany(state, action.payload)
-      state.loading = false
+      comicsAdapter.upsertMany(state, action.payload);
+      state.loading = false;
     })
     .addCase(getMoreComics.error, (state) => {
-      state.loading = false
-    })
-})
+      state.loading = false;
+    });
+});
 
-export default comicsReducer
+export default comicsReducer;
