@@ -22,7 +22,7 @@ export function* fetchHeroes(action: fetchHeroesActionType) {
 
     yield put(getHeroes.success(preparedData))
   } catch (e) {
-
+    yield put(getHeroes.error())
   }
 }
 
@@ -41,7 +41,7 @@ export function* fetchHeroesByName(action: getHeroRequestType) {
 
     yield put(getHeroesByName.success(data.data.results))
   } catch (e) {
-
+    yield put(getHeroesByName.error())
   }
 }
 

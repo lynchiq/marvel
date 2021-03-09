@@ -25,6 +25,9 @@ const heroesReducer = createReducer(initialState, builder => {
       state.loading = false
       state.total = action.payload.total
     })
+    .addCase(getHeroes.error, (state) => {
+      state.loading = false
+    })
     .addCase(getHeroesByName.request, (state, action) => {
       state.loading = true
     })
@@ -32,6 +35,9 @@ const heroesReducer = createReducer(initialState, builder => {
       state.loading = false
       heroesAdapter.removeAll(state)
       heroesAdapter.upsertMany(state, action.payload)
+    })
+    .addCase(getHeroesByName.error, (state) => {
+      state.loading = false
     })
     .addCase(setHeroes, (state, action) => {
       heroesAdapter.setAll(state, action.payload)

@@ -21,11 +21,17 @@ const comicsReducer = createReducer(initialState, builder => {
       comicsAdapter.upsertMany(state, action.payload)
       state.loading = false
     })
+    .addCase(getComics.error, (state) => {
+      state.loading = false
+    })
     .addCase(getMoreComics.request, (state, action) => {
       state.loading = true
     })
     .addCase(getMoreComics.success, (state, action) => {
       comicsAdapter.upsertMany(state, action.payload)
+      state.loading = false
+    })
+    .addCase(getMoreComics.error, (state) => {
       state.loading = false
     })
 })

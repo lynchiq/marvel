@@ -12,7 +12,7 @@ function* fetchHeroComics({payload}: getComicsRequestType) {
     let {data} =  yield call(api.get, `/characters/${payload}/comics`)
     yield put(getComics.success(data.data.results))
   } catch (e) {
-
+    yield put(getComics.error())
   }
 }
 
@@ -32,7 +32,7 @@ function* fetchMoreHeroComics({payload}: getMoreComicsRequestType) {
     })
     yield put(getMoreComics.success(data.data.results))
   } catch (e) {
-
+    yield put(getMoreComics.error())
   }
 }
 
