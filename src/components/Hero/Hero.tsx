@@ -1,18 +1,13 @@
+import { Box, Container } from '@material-ui/core';
+import React from 'react';
 import {
-  HeroContent,
-  HeroDescription,
-  HeroName,
-  HeroThumbBg,
-  HeroThumbContainer,
-  StyledHero,
-} from "./Hero.styles";
-import { Box, Container, Grid } from "@material-ui/core";
-import createThumbnailSrc from "../../utils/createThumbnailSrc";
-import stripHtml from "../../utils/stripHtml";
-import { A } from "../../styles/typography";
-import Button from "../../common/Button";
-import React from "react";
-import { HeroType } from "../../types/types";
+  HeroContent, HeroDescription, HeroName, HeroThumbBg, HeroThumbContainer, StyledHero,
+} from './Hero.styles';
+import createThumbnailSrc from '../../utils/createThumbnailSrc';
+import stripHtml from '../../utils/stripHtml';
+import { A } from '../../styles/typography';
+import Button from '../../common/Button';
+import { HeroType } from '../../types/types';
 
 type Props = {
   hero: HeroType;
@@ -20,7 +15,7 @@ type Props = {
   toggleFavorite: () => void;
 };
 
-const Hero: React.FC<Props> = ({ hero, favorite, toggleFavorite }) => {
+const Hero = ({ hero, favorite, toggleFavorite }: Props) => {
   const thumbSrc = createThumbnailSrc(hero.thumbnail);
 
   const btnText = favorite
@@ -39,7 +34,7 @@ const Hero: React.FC<Props> = ({ hero, favorite, toggleFavorite }) => {
           <HeroDescription>
             {hero.description
               ? stripHtml(hero.description)
-              : "Sorry, description is empty."}
+              : 'Sorry, description is empty.'}
           </HeroDescription>
           <Box marginBottom={5}>
             <Button text={btnText} onClick={toggleFavorite} />

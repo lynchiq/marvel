@@ -1,12 +1,12 @@
-import { H1, Heading, Paragraph } from "../../styles/typography";
-import { HomePageHero } from "./HomePage.styles";
-import { Container } from "@material-ui/core";
-import { Section } from "../../styles/global";
-import CharactersList from "../../components/HeroesList";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { setHeroes } from "../../store/modules/heroes/actions";
-import { avengers } from "../../fixtures";
+import { Container } from '@material-ui/core';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { H1, Heading, Paragraph } from '../../styles/typography';
+import { HomePageHero } from './HomePage.styles';
+import { Section } from '../../styles/global';
+import CharactersList from '../../components/HeroesList';
+import { setHeroes } from '../../store/modules/heroes/actions';
+import { avengers } from '../../fixtures';
 
 const HomePage = () => {
   const dispatch = useDispatch();

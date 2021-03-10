@@ -1,12 +1,12 @@
-import { HeroType } from "../../../types/types";
-import { createEntityAdapter, createReducer } from "@reduxjs/toolkit";
+import { createEntityAdapter, createReducer } from '@reduxjs/toolkit';
+import { HeroType } from '../../../types/types';
 import {
   getHeroes,
   getHeroesByName,
   setHeroes,
   setHeroesCurrentPage,
   unsetHeroes,
-} from "./actions";
+} from './actions';
 
 export const heroesAdapter = createEntityAdapter<HeroType>({
   selectId: (hero) => hero.id,
@@ -34,7 +34,7 @@ const heroesReducer = createReducer(initialState, (builder) => {
     .addCase(getHeroes.error, (state) => {
       state.loading = false;
     })
-    .addCase(getHeroesByName.request, (state, action) => {
+    .addCase(getHeroesByName.request, (state) => {
       state.loading = true;
     })
     .addCase(getHeroesByName.success, (state, action) => {

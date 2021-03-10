@@ -1,6 +1,6 @@
-import { createEntityAdapter, createReducer } from "@reduxjs/toolkit";
-import { HeroType } from "../../../types/types";
-import { setFavoriteHero, unsetFavoriteHero } from "./actions";
+import { createEntityAdapter, createReducer } from '@reduxjs/toolkit';
+import { HeroType } from '../../../types/types';
+import { setFavoriteHero, unsetFavoriteHero } from './actions';
 
 export const favoriteHeroesAdapter = createEntityAdapter<HeroType>({
   selectId: (hero) => hero.id,

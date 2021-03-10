@@ -1,33 +1,40 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import { RootState } from "../../store/modules/rootReducer";
-import Hero from "../../components/Hero";
-import { Container } from "@material-ui/core";
-import { Section } from "../../styles/global";
-import { H1 } from "../../styles/typography";
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { Container } from '@material-ui/core';
+import { RootState } from '../../store/modules/rootReducer';
+import Hero from '../../components/Hero';
+import { Section } from '../../styles/global';
+import { H1 } from '../../styles/typography';
 import {
   setFavoriteHero,
   unsetFavoriteHero,
-} from "../../store/modules/favorite/actions";
-import { selectHeroById } from "../../store/modules/heroes/selectors";
-import { selectFavoriteHero } from "../../store/modules/favorite/selectors";
+} from '../../store/modules/favorite/actions';
+import { selectHeroById } from '../../store/modules/heroes/selectors';
+import { selectFavoriteHero } from '../../store/modules/favorite/selectors';
 
 const HeroPage: React.FC = () => {
   const dispatch = useDispatch();
 
-  let { id }: any = useParams();
+  const { id }: any = useParams();
 
-  const hero = useSelector((state: RootState) => selectHeroById(state, +id));
-  const isFavorite = !!useSelector((state: RootState) =>
-    selectFavoriteHero(state, +id)
-  );
+  const favorite = useSelector((state: RootState) => selectFavoriteHero(state, +id));
+
+  const isFavorite = !!favorite;
+
+  let hero = useSelector((state: RootState) => selectHeroById(state, +id));
+
+  if (!hero && isFavorite) {
+    hero = favorite;
+  }
 
   const toggleFavorite = () => {
-    if (isFavorite) {
-      hero && dispatch(unsetFavoriteHero(hero.id));
-    } else {
-      hero && dispatch(setFavoriteHero(hero));
+    if (hero) {
+      if (isFavorite) {
+        dispatch(unsetFavoriteHero(hero.id));
+      } else {
+        dispatch(setFavoriteHero(hero));
+      }
     }
   };
 

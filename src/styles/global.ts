@@ -1,8 +1,8 @@
-import styled, { createGlobalStyle } from "styled-components";
-import normalize from "./normalize.css";
-import Marvel from "../assets/fonts/Marvel/Marvel-Bold.ttf";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import styled, { createGlobalStyle } from 'styled-components';
+import normalize from './normalize.css';
+import Marvel from '../assets/fonts/Marvel/Marvel-Bold.ttf';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 export const GlobalStyle = createGlobalStyle`
   

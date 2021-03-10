@@ -1,5 +1,5 @@
-import { StyledButton, StyledButtonText } from "./Button.styles";
-import React from "react";
+import React from 'react';
+import { StyledButton, StyledButtonText } from './Button.styles';
 
 type Props = {
   text: string;
@@ -8,17 +8,21 @@ type Props = {
   disabled?: boolean;
 };
 
-const Button: React.FC<Props> = ({
+const Button = ({
   text,
   onClick,
-  isLoading = false,
-  disabled = false,
-}) => {
-  return (
-    <StyledButton onClick={onClick}>
-      <StyledButtonText>{isLoading ? "loading..." : text}</StyledButtonText>
-    </StyledButton>
-  );
+  isLoading,
+  disabled,
+}: Props) => (
+  <StyledButton onClick={onClick} disabled={disabled}>
+    <StyledButtonText>{isLoading ? 'loading...' : text}</StyledButtonText>
+  </StyledButton>
+);
+
+Button.defaultProps = {
+  onClick: () => {},
+  isLoading: false,
+  disabled: false,
 };
 
 export default Button;

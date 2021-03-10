@@ -1,26 +1,25 @@
-import { Grid } from "@material-ui/core";
-import HeroCard from "../HeroCard";
-import { HeroType } from "../../types/types";
-import React from "react";
+import { Grid } from '@material-ui/core';
+import React from 'react';
+import HeroCard from '../HeroCard';
+import { HeroType } from '../../types/types';
 
 type Props = {
   heroes: HeroType[];
 };
 
-const HeroesList: React.FunctionComponent<Props> = ({ heroes }) => {
-  const heroesList = heroes.map((hero, i) => {
-    return (
+const HeroesList = ({ heroes }: Props) => (
+  <Grid container spacing={2}>
+    {heroes.map((hero) => (
       <Grid key={hero.id} item lg={3} md={4} sm={6}>
-        <HeroCard {...hero} />
+        <HeroCard
+          id={hero.id}
+          name={hero.name}
+          description={hero.description}
+          thumbnail={hero.thumbnail}
+        />
       </Grid>
-    );
-  });
-
-  return (
-    <Grid container spacing={2}>
-      {heroesList}
-    </Grid>
-  );
-};
+    ))}
+  </Grid>
+);
 
 export default HeroesList;

@@ -1,6 +1,6 @@
-import { createEntityAdapter, createReducer } from "@reduxjs/toolkit";
-import { ComicType } from "../../../types/types";
-import { getComics, getMoreComics } from "./actions";
+import { createEntityAdapter, createReducer } from '@reduxjs/toolkit';
+import { ComicType } from '../../../types/types';
+import { getComics, getMoreComics } from './actions';
 
 export const comicsAdapter = createEntityAdapter<ComicType>({
   selectId: (comic) => comic.id,
@@ -13,7 +13,7 @@ const initialState = comicsAdapter.getInitialState({
 
 const comicsReducer = createReducer(initialState, (builder) => {
   builder
-    .addCase(getComics.request, (state, action) => {
+    .addCase(getComics.request, (state) => {
       comicsAdapter.removeAll(state);
       state.loading = true;
     })
@@ -24,7 +24,7 @@ const comicsReducer = createReducer(initialState, (builder) => {
     .addCase(getComics.error, (state) => {
       state.loading = false;
     })
-    .addCase(getMoreComics.request, (state, action) => {
+    .addCase(getMoreComics.request, (state) => {
       state.loading = true;
     })
     .addCase(getMoreComics.success, (state, action) => {

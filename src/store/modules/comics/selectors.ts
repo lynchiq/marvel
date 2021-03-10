@@ -1,5 +1,5 @@
-import { RootState } from "../rootReducer";
-import { comicsAdapter } from "./reducer";
+import { RootState } from '../rootReducer';
+import { comicsAdapter } from './reducer';
 
 export const selectComicsLoading = (state: RootState) => state.comics.loading;
 

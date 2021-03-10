@@ -25,6 +25,12 @@ export type ComicType = {
   };
 };
 
+export type ComicCardType = {
+  id: number;
+  title: string;
+  thumbnail: ThumbnailType;
+}
+
 export type HeroType = {
   id: number;
   name: string;

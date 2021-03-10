@@ -1,6 +1,5 @@
-import styled from "styled-components";
-import { H1 } from "../../styles/typography";
-import { Link } from "react-router-dom";
+import styled from 'styled-components';
+import { H1 } from '../../styles/typography';
 
 export const StyledHero = styled.div`
   position: relative;

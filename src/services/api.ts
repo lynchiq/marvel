@@ -1,7 +1,7 @@
-import axios from "axios";
-import md5 from "md5";
+import axios from 'axios';
+import md5 from 'md5';
 
-const BASE_URL = "https://gateway.marvel.com/v1/public";
+const BASE_URL = 'https://gateway.marvel.com/v1/public';
 const PUBLIC_KEY = process.env.REACT_APP_PUBLIC_KEY;
 const PRIVATE_KEY = process.env.REACT_APP_PRIVATE_KEY;
 

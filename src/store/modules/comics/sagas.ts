@@ -1,6 +1,8 @@
-import api from "../../../services/api";
-import { all, call, put, takeLatest } from "@redux-saga/core/effects";
-import { getComics, getMoreComics } from "./actions";
+import {
+  all, call, put, takeLatest,
+} from '@redux-saga/core/effects';
+import api from '../../../services/api';
+import { getComics, getMoreComics } from './actions';
 
 type getComicsRequestType = {
   payload: number;
@@ -8,7 +10,7 @@ type getComicsRequestType = {
 
 function* fetchHeroComics({ payload }: getComicsRequestType) {
   try {
-    let { data } = yield call(api.get, `/characters/${payload}/comics`);
+    const { data } = yield call(api.get, `/characters/${payload}/comics`);
     yield put(getComics.success(data.data.results));
   } catch (e) {
     yield put(getComics.error());
@@ -24,7 +26,7 @@ type getMoreComicsRequestType = {
 
 function* fetchMoreHeroComics({ payload }: getMoreComicsRequestType) {
   try {
-    let { data } = yield call(api.get, `/characters/${payload.id}/comics`, {
+    const { data } = yield call(api.get, `/characters/${payload.id}/comics`, {
       params: {
         offset: payload.offset,
       },

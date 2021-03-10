@@ -1,9 +1,9 @@
-import { ComicCardBg, ComicCardImg, StyledComicCard } from "./ComicCard.styles";
-import React from "react";
-import { ComicType } from "../../types/types";
-import createThumbnailSrc from "../../utils/createThumbnailSrc";
+import React from 'react';
+import { ComicCardBg, ComicCardImg, StyledComicCard } from './ComicCard.styles';
+import { ComicCardType } from '../../types/types';
+import createThumbnailSrc from '../../utils/createThumbnailSrc';
 
-const ComicCard: React.FC<ComicType> = ({ id, title, thumbnail }) => {
+const ComicCard = ({ id, title, thumbnail }: ComicCardType) => {
   const thumbSrc = createThumbnailSrc(thumbnail);
 
   return (

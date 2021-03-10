@@ -1,11 +1,9 @@
-import { RootState } from "../rootReducer";
-import { heroesAdapter } from "./reducer";
+import { RootState } from '../rootReducer';
+import { heroesAdapter } from './reducer';
 
-export const selectHeroesCurrentPage = (state: RootState) =>
-  state.heroes.currentPage;
+export const selectHeroesCurrentPage = (state: RootState) => state.heroes.currentPage;
 
-export const selectCurrentHeroesTotal = (state: RootState) =>
-  state.heroes.total;
+export const selectCurrentHeroesTotal = (state: RootState) => state.heroes.total;
 
 export const {
   selectById: selectHeroById,

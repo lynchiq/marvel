@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { StyledThumbnail } from "../../common/Thumbnail/Thumbnail.styles";
+import styled from 'styled-components';
+import { StyledThumbnail } from '../../common/Thumbnail/Thumbnail.styles';
 
 export const StyledComic = styled.div`
   ${StyledThumbnail} {

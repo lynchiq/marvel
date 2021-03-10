@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { H1, Paragraph } from "../../styles/typography";
-import characters from "../../assets/characters.jpg";
+import styled from 'styled-components';
+import { H1, Paragraph } from '../../styles/typography';
+import characters from '../../assets/characters.jpg';
 
 export const HomePageHero = styled.div`
   width: 100%;

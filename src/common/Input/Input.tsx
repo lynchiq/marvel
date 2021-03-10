@@ -1,33 +1,29 @@
-import { StyledInput } from "./Input.styles";
-import React from "react";
+import React from 'react';
+import { StyledInput } from './Input.styles';
 
 type Props = {
   placeholder: string;
-  name: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   error: boolean;
   disabled: boolean;
 };
 
-const Input: React.FC<Props> = ({
+const Input = ({
   placeholder,
-  name,
   value,
   onChange,
   error,
   disabled,
-}) => {
-  return (
-    <StyledInput
-      error={error}
-      type="text"
-      placeholder={placeholder}
-      value={value}
-      onChange={onChange}
-      disabled={disabled}
-    />
-  );
-};
+}: Props) => (
+  <StyledInput
+    error={error}
+    type="text"
+    placeholder={placeholder}
+    value={value}
+    onChange={onChange}
+    disabled={disabled}
+  />
+);
 
 export default Input;

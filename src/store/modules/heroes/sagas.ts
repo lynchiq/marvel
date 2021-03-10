@@ -1,7 +1,7 @@
-import api from "../../../services/api";
-import { all, call, takeLatest } from "redux-saga/effects";
-import { getHeroes, getHeroesByName } from "./actions";
-import { put } from "@redux-saga/core/effects";
+import { all, call, takeLatest } from 'redux-saga/effects';
+import { put } from '@redux-saga/core/effects';
+import api from '../../../services/api';
+import { getHeroes, getHeroesByName } from './actions';
 
 type fetchHeroesActionType = {
   payload: number;
@@ -9,13 +9,13 @@ type fetchHeroesActionType = {
 
 export function* fetchHeroes(action: fetchHeroesActionType) {
   try {
-    let { data } = yield call(api.get, `/characters`, {
+    const { data } = yield call(api.get, '/characters', {
       params: {
         offset: action.payload,
       },
     });
 
-    let preparedData = {
+    const preparedData = {
       heroes: data.data.results,
       total: data.data.total,
     };
@@ -33,7 +33,7 @@ type getHeroRequestType = {
 
 export function* fetchHeroesByName(action: getHeroRequestType) {
   try {
-    let { data } = yield call(api.get, `/characters`, {
+    const { data } = yield call(api.get, '/characters', {
       params: {
         name: action.payload,
       },

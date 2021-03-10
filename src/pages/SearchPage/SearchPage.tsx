@@ -1,16 +1,16 @@
-import { Heading } from "../../styles/typography";
-import { useDispatch, useSelector } from "react-redux";
-import { Box, Container, Grid } from "@material-ui/core";
-import CharactersList from "../../components/HeroesList";
-import { Section } from "../../styles/global";
-import SearchForm from "../../components/SearchForm";
-import { RootState } from "../../store/modules/rootReducer";
+import { useDispatch, useSelector } from 'react-redux';
+import { Box, Container, Grid } from '@material-ui/core';
+import React, { useEffect } from 'react';
+import { Heading } from '../../styles/typography';
+import CharactersList from '../../components/HeroesList';
+import { Section } from '../../styles/global';
+import SearchForm from '../../components/SearchForm';
+import { RootState } from '../../store/modules/rootReducer';
 import {
   getHeroesByName,
   unsetHeroes,
-} from "../../store/modules/heroes/actions";
-import React, { useEffect } from "react";
-import { selectAllHeroes } from "../../store/modules/heroes/selectors";
+} from '../../store/modules/heroes/actions';
+import { selectAllHeroes } from '../../store/modules/heroes/selectors';
 
 type FormData = {
   name: string;
@@ -33,14 +33,14 @@ const SearchPage = () => {
   return (
     <Container>
       <Section>
-        <Box textAlign={"center"}>
+        <Box textAlign="center">
           <Heading>Search superhero</Heading>
         </Box>
-        <Box marginTop={7}>
+        <Box marginTop="7">
           <SearchForm onSubmit={handleSubmit} isLoading={isLoading} />
           <Section>
             {isLoading ? (
-              "loading..."
+              'loading...'
             ) : (
               <Grid container>
                 <CharactersList heroes={heroes} />
