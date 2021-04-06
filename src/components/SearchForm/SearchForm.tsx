@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Input from '../../common/Input';
 import Button from '../../common/Button';
 import { StyledSearchForm } from './SearchForm.styles';
-import useInput from '../../hooks/useInput';
 
 type Props = {
   onSubmit: (data: FormData) => void;
@@ -14,16 +13,23 @@ type FormData = {
 };
 
 const SearchForm = ({ onSubmit, isLoading }: Props) => {
-  const required = (value: string) => value !== '';
-  const minLength = (value: string) => value.length > 3;
+  const [name, setName] = useState('');
+  const [formError, setFormError] = useState(false);
 
-  const heroNameInput = useInput('', [required, minLength]);
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = e.target.value;
+    setFormError(false);
+    setName(newValue);
+  };
 
   const submitForm = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (heroNameInput.isValid()) {
-      onSubmit({ name: heroNameInput.value });
+    if (name !== '') {
+      onSubmit({ name });
+    } else {
+      alert('Name is required');
+      setFormError(true);
     }
   };
 
@@ -31,14 +37,14 @@ const SearchForm = ({ onSubmit, isLoading }: Props) => {
     <StyledSearchForm onSubmit={submitForm}>
       <Input
         placeholder="Type superhero name here"
-        value={heroNameInput.value}
-        onChange={heroNameInput.onChange}
-        error={heroNameInput.error}
+        value={name}
+        onChange={handleInputChange}
+        error={formError}
         disabled={isLoading}
       />
       <Button
         text="Search"
-        disabled={heroNameInput.error}
+        disabled={formError}
         isLoading={isLoading}
       />
     </StyledSearchForm>
